@@ -1,0 +1,111 @@
+@font-face {
+    font-family: 'scotch-display';
+    src: url('/fonts/ScotchDisplay-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'scotch-display';
+    src: url('/fonts/ScotchDisplay-BoldItalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'scotch-display';
+    src: url('/fonts/ScotchDisplay-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'scotch-display';
+    src: url('/fonts/ScotchDisplay-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'scotch-display';
+    src: url('/fonts/ScotchDisplay-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'scotch-display';
+    src: url('/fonts/ScotchDisplay-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'scotch-display';
+    src: url('/fonts/ScotchDisplay-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'scotch-display';
+    src: url('/fonts/ScotchDisplay-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'scotch-display';
+    src: url('/fonts/ScotchDisplay-SemiBoldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'basic-sans';
+    src: url('/fonts/Basic_Sans_Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'basic-sans';
+    src: url('/fonts/Basic_Sans_SemiBold.otf') format('opentype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'basic-sans';
+    src: url('/fonts/BasicSans-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+body {
+    font-family: "basic-sans", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "scotch-display", serif;
+}
+
+button,
+.btn,
+a {
+    font-family: "Inter Tight", sans-serif;
+}
+
+
+
+.font-basic {
+    font-family: "basic-sans", sans-serif;
+}
+
+/* Custom base CSS */

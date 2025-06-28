@@ -1,0 +1,118 @@
+/* Component-specific styles for Tailwind CSS v4 */
+
+/* Custom component classes using standard CSS */
+.btn-primary {
+  padding: 0.75rem 1.5rem;
+  background-color: rgb(37 99 235);
+  color: white;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.btn-primary:hover {
+  background-color: rgb(29 78 216);
+}
+
+.btn-primary:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgb(59 130 246);
+}
+
+.btn-secondary {
+  padding: 0.75rem 1.5rem;
+  background-color: rgb(229 231 235);
+  color: rgb(31 41 55);
+  font-weight: 600;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.btn-secondary:hover {
+  background-color: rgb(209 213 219);
+}
+
+.btn-outline {
+  padding: 0.75rem 1.5rem;
+  border: 2px solid rgb(37 99 235);
+  color: rgb(37 99 235);
+  font-weight: 600;
+  border-radius: 0.5rem;
+  background-color: transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-outline:hover {
+  background-color: rgb(37 99 235);
+  color: white;
+}
+
+/* Card components */
+.card {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgb(229 231 235);
+  overflow: hidden;
+}
+
+.card-header {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid rgb(229 231 235);
+  background-color: rgb(249 250 251);
+}
+
+.card-body {
+  padding: 1rem 1.5rem;
+}
+
+.card-footer {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid rgb(229 231 235);
+  background-color: rgb(249 250 251);
+}
+
+/* Form elements */
+.form-input {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: 1px solid rgb(209 213 219);
+  border-radius: 0.5rem;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: transparent;
+  box-shadow: 0 0 0 2px rgb(59 130 246);
+}
+
+.form-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgb(55 65 81);
+  margin-bottom: 0.5rem;
+}
+
+/* Container */
+.container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
