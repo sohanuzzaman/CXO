@@ -262,10 +262,9 @@ export default function Home() {
 
       {/* About Blake Morgan Section */}
       <section 
-        className="relative text-white py-16 sm:py-24 md:py-32 lg:py-40 bg-no-repeat bg-right-top lg:bg-cover" 
+        className="relative text-white py-16 sm:py-24 md:py-32 lg:py-40 bg-no-repeat bg-right-top about-bg-responsive" 
         style={{ 
-          backgroundImage: "url(/img/about-bg.jpg)",
-          backgroundSize: "170% auto"
+          backgroundImage: "url(/img/about-bg.jpg)"
         }}
       >
         {/* Gradient Overlay */}

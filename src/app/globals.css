@@ -17,3 +17,14 @@ body {
   color: var(--foreground);
   font-family: "basic-sans", "Inter Tight", sans-serif;
 }
+
+/* About Blake Morgan Section - Responsive Background */
+.about-bg-responsive {
+  background-size: 170% auto;
+}
+
+@media (min-width: 1024px) {
+  .about-bg-responsive {
+    background-size: contain;
+  }
+}
