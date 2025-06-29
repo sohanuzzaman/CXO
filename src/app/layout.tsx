@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter_Tight } from "next/font/google";
 import "./globals.css";
 import "../styles/style.css";
+import { MembershipModalProvider } from "@/context/MembershipModalContext";
+import MembershipModal from "@/components/MembershipModal";
 
 const interTight = Inter_Tight({
   variable: "--font-inter-tight",
@@ -25,7 +27,10 @@ export default function RootLayout({
         <link rel="icon" type="image/png" href="/img/favicon.png" />
       </head>
       <body className={`${interTight.variable} antialiased`} suppressHydrationWarning={true}>
-        {children}
+        <MembershipModalProvider>
+          {children}
+          <MembershipModal />
+        </MembershipModalProvider>
       </body>
     </html>
   );

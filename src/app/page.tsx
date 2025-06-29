@@ -1,7 +1,11 @@
+'use client'
+
 import Image from "next/image";
 import Link from "next/link";
+import { useMembershipModal } from "@/context/MembershipModalContext";
 
 export default function Home() {
+  const { openModal } = useMembershipModal();
   return (
     <main className="fade-in">
       {/* Header */}
@@ -23,10 +27,6 @@ export default function Home() {
         style={{ backgroundImage: "url('/img/hero-bg.jpg')" }}
       >
         <div className="container mx-auto px-4">
-          <div 
-            className="absolute inset-0 bg-opacity-60 bg-cover animate-pulse-slow" 
-            style={{ backgroundImage: "url('/img/overlay.png')" }}
-          ></div>
           <div className="relative z-10 max-w-4xl px-4 sm:px-6 py-12 sm:py-16 text-center md:text-left">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[70px] xl:text-[90px] leading-[1.1] font-light mb-6 text-white">
               Power your next move in customer experience.
@@ -36,13 +36,13 @@ export default function Home() {
               connection, and strategic clarity needed to lead through change and elevate the customer experience at scale.
             </p>
             <div>
-              <Link 
-                href="/thank-you" 
-                className="inline-block bg-[#ffaf02] hover:bg-[#e9a104] text-black font-bold px-8 py-4 rounded-full transition-all duration-300 mt-4 text-lg sm:text-xl md:text-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105 active:scale-95 focus-ring interactive-element group"
+              <button 
+                onClick={openModal}
+                className="inline-block bg-[#ffaf02] hover:bg-[#e9a104] text-black font-bold px-8 py-4 rounded-full transition-all duration-300 mt-4 text-lg sm:text-xl md:text-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105 active:scale-95 focus-ring interactive-element group cursor-pointer border-0"
                 aria-label="Request an invitation to join CXO House"
               >
                 <span className="transition-transform duration-300 group-hover:tracking-wide">Request an Invitation</span>
-              </Link>
+              </button>
             </div>
           </div>
         </div>
@@ -81,11 +81,11 @@ export default function Home() {
       </section>
 
       {/* Who It's For Section */}
-      <section className="bg-[#efe6dc] pb-16 sm:pb-20 z-[2] animate-in slide-in-from-bottom duration-1000 delay-200">
+      <section className="bg-[#efe6dc] pb-16 sm:pb-20 z-[2]">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="bg-white rounded-2xl shadow-lg overflow-hidden z-[2] -translate-y-8 sm:-translate-y-10 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-12 group">
             <div className="flex flex-col md:flex-row justify-between items-stretch p-6 sm:p-8 lg:p-12 gap-6 lg:gap-8">
-              <div className="w-full md:w-1/2 pr-0 md:pr-8 md:border-r md:border-r-[#b7b7b7] flex flex-col justify-center animate-in fade-in-50 slide-in-from-left duration-1000 delay-400">
+              <div className="w-full md:w-1/2 pr-0 md:pr-8 md:border-r md:border-r-[#b7b7b7] flex flex-col justify-center">
                 <h3 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl italic font-serif mb-4 sm:mb-6 text-black group-hover:text-[#0db8ff] transition-colors duration-500">
                   Who It&apos;s For
                 </h3>
@@ -94,7 +94,7 @@ export default function Home() {
                   industries:
                 </p>
               </div>
-              <div className="w-full md:w-1/2 text-lg font-light text-gray-800 flex flex-col justify-center animate-in fade-in-50 slide-in-from-right duration-1000 delay-600">
+              <div className="w-full md:w-1/2 text-lg font-light text-gray-800 flex flex-col justify-center">
                 <ul className="ml-0 lg:ml-8 space-y-4 sm:space-y-6">
                   <li className="group/item hover:scale-105 transition-transform duration-300">
                     <strong className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold group-hover/item:text-[#ffaf02] transition-colors duration-300">• CXO</strong><br />
@@ -118,12 +118,12 @@ export default function Home() {
 
           {/* Programs and Benefits */}
           <div className="text-center mt-12 sm:mt-16 lg:mt-20">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif italic text-black mb-12 sm:mb-16 animate-in fade-in-50 slide-in-from-bottom duration-1000 delay-800">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif italic text-black mb-12 sm:mb-16">
               Programs and Benefits
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 max-w-6xl mx-auto">
               {/* Peer Sessions */}
-              <div className="flex flex-col items-center text-center group hover:scale-105 transition-all duration-300 animate-in fade-in-50 slide-in-from-bottom delay-1000">
+              <div className="flex flex-col items-center text-center group hover:scale-105 transition-all duration-300">
                 <div className="w-20 h-20 sm:w-24 sm:h-24 mb-4 sm:mb-6 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
                   <svg className="w-full h-full group-hover:text-[#0db8ff] transition-colors duration-300" id="bold" enableBackground="new 0 0 24 24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="m4.5 6.25v-4.5c0-.26.03-.51.1-.75h-2.85c-.96 0-1.75.79-1.75 1.75v4.5c0 .96.79 1.75 1.75 1.75h.37l1.28 1.7c.14.18.35.29.57.3h.03c.22 0 .42-.09.56-.26l1.5-1.71c-.93-.58-1.56-1.61-1.56-2.78z" />
@@ -142,7 +142,7 @@ export default function Home() {
               </div>
 
               {/* Executive Roundtables */}
-              <div className="flex flex-col items-center text-center group hover:scale-105 transition-all duration-300 animate-in fade-in-50 slide-in-from-bottom delay-[1100ms]">
+              <div className="flex flex-col items-center text-center group hover:scale-105 transition-all duration-300">
                 <div className="w-20 h-20 sm:w-24 sm:h-24 mb-4 sm:mb-6 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
                   <svg className="w-full h-full group-hover:text-[#0db8ff] transition-colors duration-300" viewBox="0 0 512.001 512" xmlns="http://www.w3.org/2000/svg">
                     <path d="m256 128.152344c-70.496094 0-127.847656 57.351562-127.847656 127.847656s57.351562 127.847656 127.847656 127.847656 127.847656-57.351562 127.847656-127.847656-57.351562-127.847656-127.847656-127.847656zm0 0" />
@@ -157,7 +157,7 @@ export default function Home() {
               </div>
 
               {/* Insights & Resources */}
-              <div className="flex flex-col items-center text-center group hover:scale-105 transition-all duration-300 animate-in fade-in-50 slide-in-from-bottom delay-[1200ms]">
+              <div className="flex flex-col items-center text-center group hover:scale-105 transition-all duration-300">
                 <div className="w-20 h-20 sm:w-24 sm:h-24 mb-4 sm:mb-6 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
                   <svg className="w-full h-full group-hover:text-[#0db8ff] transition-colors duration-300" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
                     <g id="idea">
@@ -177,7 +177,7 @@ export default function Home() {
               </div>
 
               {/* Private Community */}
-              <div className="flex flex-col items-center text-center group hover:scale-105 transition-all duration-300 animate-in fade-in-50 slide-in-from-bottom delay-[1300ms]">
+              <div className="flex flex-col items-center text-center group hover:scale-105 transition-all duration-300">
                 <div className="w-20 h-20 sm:w-24 sm:h-24 mb-4 sm:mb-6 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
                   <svg className="w-full h-full group-hover:text-[#0db8ff] transition-colors duration-300" id="Capa_1" enableBackground="new 0 0 587.773 587.773" viewBox="0 0 587.773 587.773" xmlns="http://www.w3.org/2000/svg">
                     <g>
@@ -200,13 +200,13 @@ export default function Home() {
               </div>
             </div>
             <div className="mt-10 sm:mt-12 lg:mt-16 animate-in fade-in-50 slide-in-from-bottom delay-[1500ms]">
-              <Link 
-                href="/thank-you" 
-                className="inline-block bg-[#ffaf02] hover:bg-[#e9a104] text-black font-bold px-8 sm:px-10 lg:px-12 py-3 sm:py-4 rounded-full transition-all duration-300 text-lg sm:text-xl lg:text-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105 active:scale-95 focus-ring interactive-element group"
+              <button 
+                onClick={openModal}
+                className="inline-block bg-[#ffaf02] hover:bg-[#e9a104] text-black font-bold px-8 sm:px-10 lg:px-12 py-3 sm:py-4 rounded-full transition-all duration-300 text-lg sm:text-xl lg:text-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105 active:scale-95 focus-ring interactive-element group cursor-pointer border-0"
                 aria-label="Explore CXO House membership opportunities"
               >
                 <span className="transition-transform duration-300 group-hover:tracking-wide">Explore Membership</span>
-              </Link>
+              </button>
             </div>
           </div>
         </div>
@@ -314,13 +314,13 @@ export default function Home() {
             Apply now to access the conversations, insights, and relationships shaping the future of customer experience
           </p>
           <div className="animate-in fade-in-50 slide-in-from-bottom duration-1000 delay-1100">
-            <Link 
-              href="/thank-you" 
-              className="inline-block bg-[#ffaf02] hover:bg-[#e9a104] text-black font-bold px-8 sm:px-10 lg:px-12 py-3 sm:py-4 rounded-full transition-all duration-300 text-lg sm:text-xl lg:text-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105 active:scale-95 focus-ring interactive-element group"
+            <button 
+              onClick={openModal}
+              className="inline-block bg-[#ffaf02] hover:bg-[#e9a104] text-black font-bold px-8 sm:px-10 lg:px-12 py-3 sm:py-4 rounded-full transition-all duration-300 text-lg sm:text-xl lg:text-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105 active:scale-95 focus-ring interactive-element group cursor-pointer border-0"
               aria-label="Request an invitation to join the CXO House network"
             >
               <span className="transition-transform duration-300 group-hover:tracking-wide">Request an Invitation</span>
-            </Link>
+            </button>
           </div>
         </div>
       </section>

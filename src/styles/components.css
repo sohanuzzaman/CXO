@@ -116,3 +116,74 @@
     padding-right: 2rem;
   }
 }
+
+body.modal-open {
+  overflow: hidden;
+}
+
+.membership-modal-overlay {
+  @apply fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none;
+}
+
+.membership-modal-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.membership-modal-content {
+  @apply bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-gray-200 relative;
+  transform: scale(0.9) translateY(20px);
+  transition: all 0.3s ease-in-out;
+}
+
+.membership-modal-overlay.open .membership-modal-content {
+  transform: scale(1) translateY(0);
+}
+
+.membership-form-container .form-field {
+  @apply mb-6;
+}
+
+.membership-form-container input,
+.membership-form-container textarea {
+  @apply w-full px-5 py-4 border-2 border-gray-200 rounded-xl text-base transition-all duration-300 font-light text-black bg-white;
+  transform: translateY(0);
+}
+
+.membership-form-container input:hover,
+.membership-form-container textarea:hover {
+  @apply border-yellow-400 -translate-y-px shadow-lg;
+  box-shadow: 0 4px 12px rgba(255, 175, 2, 0.1);
+}
+
+.membership-form-container input::placeholder,
+.membership-form-container textarea::placeholder {
+  @apply text-gray-500 font-light;
+}
+
+.membership-form-container input:focus,
+.membership-form-container textarea:focus {
+  @apply outline-none border-yellow-500 text-black -translate-y-px;
+  box-shadow: 0 0 0 3px rgba(255, 175, 2, 0.15);
+}
+
+.membership-form-container textarea {
+  @apply min-h-[120px] resize-y;
+}
+
+.membership-form-container button {
+  @apply w-full bg-yellow-400 text-black border-none rounded-full py-4 px-8 font-bold text-lg cursor-pointer transition-all duration-300 mt-4 tracking-wider;
+}
+
+.membership-form-container button:hover {
+  @apply bg-yellow-500 -translate-y-0.5 shadow-xl;
+  box-shadow: 0 8px 20px rgba(255, 175, 2, 0.3);
+}
+
+.membership-form-container button:active {
+  @apply translate-y-0 shadow-lg;
+  box-shadow: 0 4px 12px rgba(255, 175, 2, 0.2);
+}

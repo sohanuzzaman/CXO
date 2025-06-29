@@ -122,12 +122,7 @@ body {
   animation: pulse-slow 8s ease-in-out infinite;
 }
 
-/* Smooth scrolling for better navigation - disabled to prevent scroll conflicts */
-/* html {
-  scroll-behavior: smooth;
-} */
-
-/* Prevent automatic scrolling issues */
+/* Prevent automatic scrolling issues and modal conflicts */
 html, body {
   scroll-behavior: auto !important;
   overflow-x: hidden;
@@ -139,9 +134,8 @@ main {
   overflow-x: hidden;
 }
 
-/* Fix any potential transform issues that could affect scroll */
+/* Disable transforms that could affect modal positioning */
 * {
-  transform-style: preserve-3d;
   backface-visibility: hidden;
 }
 
@@ -312,4 +306,157 @@ html {
   background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
   background-size: 200px 100%;
   animation: shimmer 1.5s infinite;
+}
+
+/* Modal Styles */
+body.modal-open {
+  overflow: hidden !important;
+  position: fixed !important;
+  width: 100% !important;
+}
+
+.membership-modal-overlay {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  z-index: 99999 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  padding: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none;
+  /* Prevent any transforms from affecting the modal */
+  transform: none !important;
+  will-change: opacity;
+}
+
+.membership-modal-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.membership-modal-content {
+  background: white;
+  border-radius: 1rem;
+  max-width: 42rem;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(209, 213, 219, 0.3);
+  position: relative;
+  transform: scale(0.9) translateY(20px);
+  transition: all 0.3s ease-in-out;
+  /* Ensure modal content is not affected by page transforms */
+  will-change: transform, opacity;
+}
+
+.membership-modal-overlay.open .membership-modal-content {
+  transform: scale(1) translateY(0);
+}
+
+/* Form Styles */
+.membership-form-container .form-field {
+  margin-bottom: 1.5rem;
+}
+
+.membership-form-container input,
+.membership-form-container textarea {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  color: #000000;
+  background-color: #ffffff;
+  font-weight: 300;
+}
+
+.membership-form-container input:hover,
+.membership-form-container textarea:hover {
+  border-color: #fbbf24;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(251, 191, 36, 0.1);
+}
+
+.membership-form-container input::placeholder,
+.membership-form-container textarea::placeholder {
+  color: #6b7280;
+  font-weight: 300;
+}
+
+.membership-form-container input:focus,
+.membership-form-container textarea:focus {
+  outline: none;
+  border-color: #f59e0b;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+  transform: translateY(-1px);
+}
+
+.membership-form-container textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.membership-form-container button {
+  width: 100%;
+  background-color: #f59e0b;
+  color: #000000;
+  border: none;
+  border-radius: 9999px;
+  padding: 1rem 2rem;
+  font-weight: 700;
+  font-size: 1.125rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  margin-top: 1rem;
+  letter-spacing: 0.025em;
+}
+
+.membership-form-container button:hover {
+  background-color: #d97706;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);
+}
+
+.membership-form-container button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
+}
+
+.membership-form-container button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Close button styles */
+.modal-close-button {
+  transition: all 0.3s ease;
+}
+
+.modal-close-button:hover {
+  transform: rotate(90deg);
+  background-color: #f3f4f6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .membership-modal-content {
+    margin: 1rem;
+    max-height: 95vh;
+  }
+  
+  .membership-modal-content .p-8 {
+    padding: 1.5rem;
+  }
 }
