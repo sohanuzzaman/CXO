@@ -33,12 +33,12 @@ export default function Home() {
               CXO House is the private network for Chief Experience and Customer Officers—delivering the insight,
               connection, and strategic clarity needed to lead through change and elevate the customer experience at scale.
             </p>
-            <a 
-              href="#" 
+            <Link 
+              href="/thank-you" 
               className="inline-block bg-[#ffaf02] hover:bg-[#e9a104] text-black font-bold px-8 py-4 rounded-full transition mt-4 text-lg sm:text-xl md:text-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             >
               Request an Invitation
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -193,12 +193,12 @@ export default function Home() {
               </div>
             </div>
             <div className="mt-10 sm:mt-12 lg:mt-16">
-              <a 
-                href="#" 
+              <Link 
+                href="/thank-you" 
                 className="inline-block bg-[#ffaf02] hover:bg-[#e9a104] text-black font-bold px-8 sm:px-10 lg:px-12 py-3 sm:py-4 rounded-full transition text-lg sm:text-xl lg:text-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
                 Explore Membership
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -296,12 +296,12 @@ export default function Home() {
           <p className="text-black mb-6 sm:mb-8 lg:mb-10 mx-auto max-w-[600px] text-base sm:text-lg lg:text-xl leading-relaxed">
             Apply now to access the conversations, insights, and relationships shaping the future of customer experience
           </p>
-          <a 
-            href="#" 
+          <Link 
+            href="/thank-you" 
             className="inline-block bg-[#ffaf02] hover:bg-[#e9a104] text-black font-bold px-8 sm:px-10 lg:px-12 py-3 sm:py-4 rounded-full transition text-lg sm:text-xl lg:text-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1"
           >
             Request an Invitation
-          </a>
+          </Link>
         </div>
       </section>
     </>
