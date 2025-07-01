@@ -187,3 +187,77 @@ body.modal-open {
   @apply translate-y-0 shadow-lg;
   box-shadow: 0 4px 12px rgba(255, 175, 2, 0.2);
 }
+
+/* Kajabi form specific styles */
+.kajabi-form-container {
+  width: 100%;
+  min-height: 400px;
+}
+
+/* Override any Kajabi form styles to match our design */
+.kajabi-form-container iframe {
+  width: 100%;
+  border: none;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  min-height: 400px;
+}
+
+/* Style any form elements that might be injected by Kajabi */
+.kajabi-form-container .form-field,
+.kajabi-form-container .field,
+.kajabi-form-container .input-field {
+  margin-bottom: 1.5rem;
+}
+
+.kajabi-form-container input[type="text"],
+.kajabi-form-container input[type="email"],
+.kajabi-form-container input[type="tel"],
+.kajabi-form-container textarea,
+.kajabi-form-container select {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  border: 2px solid rgb(229 231 235);
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  font-weight: 300;
+  color: black;
+  background-color: white;
+}
+
+.kajabi-form-container input[type="text"]:focus,
+.kajabi-form-container input[type="email"]:focus,
+.kajabi-form-container input[type="tel"]:focus,
+.kajabi-form-container textarea:focus,
+.kajabi-form-container select:focus {
+  outline: none;
+  border-color: rgb(255 175 2);
+  color: black;
+  box-shadow: 0 0 0 3px rgba(255, 175, 2, 0.15);
+}
+
+.kajabi-form-container button[type="submit"],
+.kajabi-form-container .submit-button,
+.kajabi-form-container .btn {
+  width: 100%;
+  background-color: rgb(255 175 2);
+  color: black;
+  border: none;
+  border-radius: 9999px;
+  padding: 1rem 2rem;
+  font-weight: 700;
+  font-size: 1.125rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  letter-spacing: 0.05em;
+}
+
+.kajabi-form-container button[type="submit"]:hover,
+.kajabi-form-container .submit-button:hover,
+.kajabi-form-container .btn:hover {
+  background-color: rgb(255 193 7);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  transform: translateY(-2px);
+}

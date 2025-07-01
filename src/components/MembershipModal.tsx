@@ -1,40 +1,48 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import { useMembershipModal } from '@/context/MembershipModalContext'
 
 export default function MembershipModal() {
   const { isOpen, closeModal } = useMembershipModal()
-  const [utmSource, setUtmSource] = useState('')
-  const [isSubmitting, setIsSubmitting] = useState(false)
   const modalRef = useRef<HTMLDivElement>(null)
-  const firstInputRef = useRef<HTMLInputElement>(null)
-
-  const getUrlParameter = (name: string): string => {
-    if (typeof window === 'undefined') return ''
-    const searchParams = new URLSearchParams(window.location.search)
-    return searchParams.get(name) || ''
-  }
+  const [isFormLoading, setIsFormLoading] = useState(true)
 
   useEffect(() => {
     if (isOpen) {
-      const utmSourceParam = getUrlParameter('utm_source')
-      setUtmSource(utmSourceParam)
+      console.log('Modal opened, setting form loading to true');
+      setIsFormLoading(true)
       
-      // Focus the first input when modal opens for accessibility
-      setTimeout(() => {
-        firstInputRef.current?.focus()
-      }, 100)
+      // Fallback: Hide loading after 6 seconds if no message received
+      const fallbackTimeout = setTimeout(() => {
+        console.log('Fallback: Hiding modal loading indicator after 6 seconds');
+        setIsFormLoading(false)
+      }, 6000)
+      
+      return () => clearTimeout(fallbackTimeout)
     }
   }, [isOpen])
 
-  const handleSubmit = () => {
-    setIsSubmitting(true)
-    // Let the form submit naturally, but show loading state
-    setTimeout(() => {
-      setIsSubmitting(false)
-    }, 2000)
-  }
+  useEffect(() => {
+    // Listen for messages from the iframe
+    const handleMessage = (event: MessageEvent) => {
+      console.log('Modal received message:', event.data);
+      
+      if (event.data.type === 'kajabi-form-loaded') {
+        console.log('Form loaded, hiding loading indicator');
+        setIsFormLoading(false)
+      } else if (event.data.type === 'kajabi-form-submitted') {
+        console.log('Form submitted, will close modal in 2 seconds');
+        // Optional: Handle form submission success
+        setTimeout(() => {
+          closeModal()
+        }, 2000) // Close modal 2 seconds after successful submission
+      }
+    }
+
+    window.addEventListener('message', handleMessage)
+    return () => window.removeEventListener('message', handleMessage)
+  }, [closeModal])
 
   const handleBackdropClick = (event: React.MouseEvent<HTMLDivElement>) => {
     if (event.target === event.currentTarget) {
@@ -84,107 +92,21 @@ export default function MembershipModal() {
             </button>
           </div>
 
-          <div className="membership-form-container">
-            <form 
-              action="https://www.customerexperienceschool.com/forms/2149155673/form_submissions" 
-              method="post"
-              acceptCharset="UTF-8"
-              onSubmit={handleSubmit}
-              noValidate
-            >
-              <input name="utf8" type="hidden" value="✓" />
-              
-              <div className="form-field">
-                <label htmlFor="name" className="sr-only">Full Name</label>
-                <input 
-                  id="name"
-                  ref={firstInputRef}
-                  type="text" 
-                  name="form_submission[name]" 
-                  placeholder="Enter Name" 
-                  required 
-                  disabled={isSubmitting}
-                  autoComplete="name"
-                />
+          <div className="membership-form-container relative">
+            {isFormLoading && (
+              <div className="absolute inset-0 flex items-center justify-center bg-white/80 z-10 rounded-xl">
+                <div className="flex items-center">
+                  <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-yellow-400"></div>
+                  <span className="ml-3 text-gray-600">Loading form...</span>
+                </div>
               </div>
-              
-              <div className="form-field">
-                <label htmlFor="email" className="sr-only">Email Address</label>
-                <input 
-                  id="email"
-                  type="email" 
-                  name="form_submission[email]" 
-                  placeholder="Enter Email" 
-                  required 
-                  disabled={isSubmitting}
-                  autoComplete="email"
-                />
-              </div>
-              
-              <div className="form-field">
-                <label htmlFor="phone" className="sr-only">Phone Number</label>
-                <input 
-                  id="phone"
-                  type="tel" 
-                  name="form_submission[phone_number]" 
-                  placeholder="Phone Number" 
-                  disabled={isSubmitting}
-                  autoComplete="tel"
-                />
-              </div>
-              
-              <div className="form-field">
-                <label htmlFor="organization" className="sr-only">Organization</label>
-                <input 
-                  id="organization"
-                  type="text" 
-                  name="form_submission[custom_10]" 
-                  placeholder="Organization" 
-                  required 
-                  disabled={isSubmitting}
-                  autoComplete="organization"
-                />
-              </div>
-              
-              <div className="form-field">
-                <label htmlFor="title" className="sr-only">Job Title</label>
-                <input 
-                  id="title"
-                  type="text" 
-                  name="form_submission[custom_11]" 
-                  placeholder="Your title" 
-                  disabled={isSubmitting}
-                  autoComplete="organization-title"
-                />
-              </div>
-              
-              <div className="form-field">
-                <label htmlFor="motivation" className="sr-only">Why do you want to join?</label>
-                <textarea 
-                  id="motivation"
-                  name="form_submission[custom_12]" 
-                  placeholder="Why do you want to join?" 
-                  rows={4}
-                  disabled={isSubmitting}
-                />
-              </div>
-              
-              <input 
-                type="hidden"
-                name="form_submission[utm_source]" 
-                value={utmSource}
-              />
-              
-              <div>
-                <button 
-                  type="submit"
-                  disabled={isSubmitting}
-                  className={isSubmitting ? 'opacity-75 cursor-not-allowed' : ''}
-                >
-                  {isSubmitting ? 'Submitting...' : 'Request an Invitation'}
-                </button>
-              </div>
-            </form>
+            )}
+            <iframe 
+              src="/kajabi-form.html"
+              className="w-full border-0 rounded-xl"
+              style={{ height: '500px' }}
+              title="Membership Form"
+            />
           </div>
         </div>
       </div>
