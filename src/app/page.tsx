@@ -24,7 +24,7 @@ export default function Home() {
       {/* Hero Section */}
       <section 
         className="relative bg-cover bg-center h-screen flex items-center overflow-hidden" 
-        style={{ backgroundImage: "url('/img/hero-bg.jpg')" }}
+        style={{ backgroundImage: "url('/img/hero-bg.webp')" }}
       >
         <div className="container mx-auto px-4">
           <div className="relative z-10 max-w-4xl px-4 sm:px-6 py-12 sm:py-16 text-center md:text-left">
@@ -215,7 +215,7 @@ export default function Home() {
       {/* Executives Section */}
       <section 
         className="bg-black text-white py-16 sm:py-20 lg:py-24 px-4 bg-cover animate-in slide-in-from-bottom duration-1000 delay-300" 
-        style={{ backgroundImage: "url(/img/black-bg.jpg)" }}
+        style={{ backgroundImage: "url(/img/blackbg.webp)" }}
       >
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light italic mb-8 sm:mb-12 lg:mb-16 animate-in fade-in-50 slide-in-from-bottom duration-1000 delay-500">
@@ -284,8 +284,8 @@ export default function Home() {
           backgroundImage: "url(/img/about-bg.jpg)"
         }}
       >
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent from-10% via-[#1b0b2b]/80 via-40% to-black to-70% md:bg-gradient-to-b md:from-transparent md:from-20% md:via-[#1b0b2b]/80 md:via-50% md:to-black md:to-80%"></div>
+        {/* Gradient Overlay - Mobile only */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent from-10% via-[#1b0b2b]/80 via-40% to-black to-70% md:bg-none"></div>
         
         <div className="container mx-auto px-4 max-w-7xl relative z-10">
           {/* Reduced white space for mobile to move text higher */}
