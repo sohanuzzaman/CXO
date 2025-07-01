@@ -37,13 +37,13 @@ export default function Home() {
               connection, and strategic clarity needed to lead through change and elevate the customer experience at scale.
             </p>
             <div>
-              <a 
-                href="mailto:info@cxohouse.com?subject=CXO House Membership Inquiry"
+              <button
+                onClick={() => setIsModalOpen(true)}
                 className="inline-block bg-[#ffaf02] hover:bg-[#e9a104] text-black font-bold px-8 py-4 rounded-full transition-all duration-300 mt-4 text-lg sm:text-xl md:text-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105 active:scale-95 focus-ring interactive-element group cursor-pointer border-0"
                 aria-label="Request an invitation to join CXO House"
               >
                 <span className="transition-transform duration-300 group-hover:tracking-wide">Request an Invitation</span>
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -201,13 +201,13 @@ export default function Home() {
               </div>
             </div>
             <div className="mt-10 sm:mt-12 lg:mt-16 animate-in fade-in-50 slide-in-from-bottom delay-[1500ms]">
-              <a 
-                href="mailto:info@cxohouse.com?subject=CXO House Membership Inquiry"
+              <button
+                onClick={() => setIsModalOpen(true)}
                 className="inline-block bg-[#ffaf02] hover:bg-[#e9a104] text-black font-bold px-8 sm:px-10 lg:px-12 py-3 sm:py-4 rounded-full transition-all duration-300 text-lg sm:text-xl lg:text-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105 active:scale-95 focus-ring interactive-element group cursor-pointer border-0"
                 aria-label="Explore CXO House membership opportunities"
               >
                 <span className="transition-transform duration-300 group-hover:tracking-wide">Explore Membership</span>
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -315,30 +315,14 @@ export default function Home() {
             Apply now to access the conversations, insights, and relationships shaping the future of customer experience
           </p>
           <div className="animate-in fade-in-50 slide-in-from-bottom duration-1000 delay-1100">
-            <a 
-              href="mailto:info@cxohouse.com?subject=CXO House Membership Inquiry"
+            <button
+              onClick={() => setIsModalOpen(true)}
               className="inline-block bg-[#ffaf02] hover:bg-[#e9a104] text-black font-bold px-8 sm:px-10 lg:px-12 py-3 sm:py-4 rounded-full transition-all duration-300 text-lg sm:text-xl lg:text-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105 active:scale-95 focus-ring interactive-element group cursor-pointer border-0"
               aria-label="Request an invitation to join the CXO House network"
             >
               <span className="transition-transform duration-300 group-hover:tracking-wide">Request an Invitation</span>
-            </a>
+            </button>
           </div>
-        </div>
-      </section>
-
-      {/* Call to Action Section */}
-      <section className="min-h-[200px] bg-slate-900 flex items-center justify-center py-16 px-4">
-        <div className="text-center">
-          <h2 className="text-3xl font-bold text-white mb-6">Ready to Transform Your Customer Experience?</h2>
-          <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
-            Join our comprehensive program and learn the strategies that top companies use to create exceptional customer experiences.
-          </p>
-          <button
-            onClick={() => setIsModalOpen(true)}
-            className="bg-[#ffaf02] hover:bg-[#e9a104] text-black font-bold px-8 py-4 rounded-full transition-all duration-300 text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105 active:scale-95 focus:outline-none focus:ring-4 focus:ring-[#ffaf02] focus:ring-opacity-50"
-          >
-            Get Started Today
-          </button>
         </div>
       </section>
 
