@@ -449,6 +449,53 @@ body.modal-open {
   background-color: #f3f4f6;
 }
 
+/* Kajabi Form Integration Styles */
+.membership-modal-content.bg-gradient-to-br {
+  background: linear-gradient(135deg, #0a4e65 0%, #0db8ff 100%) !important;
+}
+
+/* Ensure Kajabi form renders properly within the modal */
+.membership-modal-content iframe {
+  width: 100% !important;
+  border: none !important;
+  border-radius: 0.5rem !important;
+}
+
+/* Style Kajabi form container */
+.membership-modal-content [data-kajabi-form] {
+  border-radius: 0.75rem !important;
+  overflow: hidden !important;
+}
+
+/* Override any Kajabi form positioning issues */
+.membership-modal-content .kajabi-form {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* Ensure loading spinner is visible */
+.membership-modal-content .animate-spin {
+  color: #0db8ff !important;
+}
+
+/* Additional Kajabi form rendering styles */
+.membership-modal-content .w-full.min-h-\[400px\] {
+  position: relative !important;
+}
+
+.membership-modal-content .w-full.min-h-\[400px\] > * {
+  max-width: 100% !important;
+}
+
+/* Ensure Kajabi scripts and forms are visible */
+.membership-modal-content script {
+  display: block !important;
+}
+
+.membership-modal-content form {
+  background: transparent !important;
+}
+
 /* Responsive adjustments */
 @media (max-width: 640px) {
   .membership-modal-content {

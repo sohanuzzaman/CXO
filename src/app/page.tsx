@@ -2,10 +2,11 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useMembershipModal } from "@/context/MembershipModalContext";
+import { useState } from "react";
+import Modal from "../components/Modal";
 
 export default function Home() {
-  const { openModal } = useMembershipModal();
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <main className="fade-in">
       {/* Header */}
@@ -36,13 +37,13 @@ export default function Home() {
               connection, and strategic clarity needed to lead through change and elevate the customer experience at scale.
             </p>
             <div>
-              <button 
-                onClick={openModal}
+              <a 
+                href="mailto:info@cxohouse.com?subject=CXO House Membership Inquiry"
                 className="inline-block bg-[#ffaf02] hover:bg-[#e9a104] text-black font-bold px-8 py-4 rounded-full transition-all duration-300 mt-4 text-lg sm:text-xl md:text-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105 active:scale-95 focus-ring interactive-element group cursor-pointer border-0"
                 aria-label="Request an invitation to join CXO House"
               >
                 <span className="transition-transform duration-300 group-hover:tracking-wide">Request an Invitation</span>
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -200,13 +201,13 @@ export default function Home() {
               </div>
             </div>
             <div className="mt-10 sm:mt-12 lg:mt-16 animate-in fade-in-50 slide-in-from-bottom delay-[1500ms]">
-              <button 
-                onClick={openModal}
+              <a 
+                href="mailto:info@cxohouse.com?subject=CXO House Membership Inquiry"
                 className="inline-block bg-[#ffaf02] hover:bg-[#e9a104] text-black font-bold px-8 sm:px-10 lg:px-12 py-3 sm:py-4 rounded-full transition-all duration-300 text-lg sm:text-xl lg:text-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105 active:scale-95 focus-ring interactive-element group cursor-pointer border-0"
                 aria-label="Explore CXO House membership opportunities"
               >
                 <span className="transition-transform duration-300 group-hover:tracking-wide">Explore Membership</span>
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -314,16 +315,128 @@ export default function Home() {
             Apply now to access the conversations, insights, and relationships shaping the future of customer experience
           </p>
           <div className="animate-in fade-in-50 slide-in-from-bottom duration-1000 delay-1100">
-            <button 
-              onClick={openModal}
+            <a 
+              href="mailto:info@cxohouse.com?subject=CXO House Membership Inquiry"
               className="inline-block bg-[#ffaf02] hover:bg-[#e9a104] text-black font-bold px-8 sm:px-10 lg:px-12 py-3 sm:py-4 rounded-full transition-all duration-300 text-lg sm:text-xl lg:text-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105 active:scale-95 focus-ring interactive-element group cursor-pointer border-0"
               aria-label="Request an invitation to join the CXO House network"
             >
               <span className="transition-transform duration-300 group-hover:tracking-wide">Request an Invitation</span>
-            </button>
+            </a>
           </div>
         </div>
       </section>
+
+      {/* Call to Action Section */}
+      <section className="min-h-[200px] bg-slate-900 flex items-center justify-center py-16 px-4">
+        <div className="text-center">
+          <h2 className="text-3xl font-bold text-white mb-6">Ready to Transform Your Customer Experience?</h2>
+          <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
+            Join our comprehensive program and learn the strategies that top companies use to create exceptional customer experiences.
+          </p>
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="bg-[#ffaf02] hover:bg-[#e9a104] text-black font-bold px-8 py-4 rounded-full transition-all duration-300 text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105 active:scale-95 focus:outline-none focus:ring-4 focus:ring-[#ffaf02] focus:ring-opacity-50"
+          >
+            Get Started Today
+          </button>
+        </div>
+      </section>
+
+      {/* Modal with Form */}
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <div className="p-8 bg-gradient-to-br from-white to-gray-50">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-light italic text-[#0a4e65] mb-3">
+              Join the CXO House Network
+            </h2>
+            <p className="text-gray-600 text-lg font-light leading-relaxed">
+              Apply to connect with top customer experience leaders
+            </p>
+          </div>
+          
+          <form 
+            action="https://www.customerexperienceschool.com/forms/2149155673/form_submissions" 
+            method="post" 
+            className="space-y-6"
+            acceptCharset="UTF-8"
+          >
+            <input name="utf8" type="hidden" value="✓" />
+            <input type="hidden" name="authenticity_token" value="y+b+i6sFK+T/nLegqEajm95HziriPDSJwJksKCg+ijOFsE4TNox0+JdBkFvckyPisf//z5aZX1cLsHZByTp3hw==" />
+            
+            <div className="space-y-5">
+              <div className="group">
+                <label htmlFor="form_submission_name" className="block text-sm font-medium text-[#0a4e65] mb-3 tracking-wide">
+                  Full Name *
+                </label>
+                <input
+                  type="text"
+                  name="form_submission[name]"
+                  id="form_submission_name"
+                  required
+                  className="w-full px-4 py-4 border-2 border-gray-200 rounded-lg shadow-sm bg-white/80 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-[#ffaf02] focus:border-[#ffaf02] transition-all duration-300 text-gray-800 placeholder-gray-400 group-hover:border-gray-300"
+                  placeholder="Enter your full name"
+                />
+              </div>
+              
+              <div className="group">
+                <label htmlFor="form_submission_email" className="block text-sm font-medium text-[#0a4e65] mb-3 tracking-wide">
+                  Email Address *
+                </label>
+                <input
+                  type="email"
+                  name="form_submission[email]"
+                  id="form_submission_email"
+                  required
+                  className="w-full px-4 py-4 border-2 border-gray-200 rounded-lg shadow-sm bg-white/80 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-[#ffaf02] focus:border-[#ffaf02] transition-all duration-300 text-gray-800 placeholder-gray-400 group-hover:border-gray-300"
+                  placeholder="Enter your email address"
+                />
+              </div>
+              
+              <div className="group">
+                <label htmlFor="form_submission_custom_10" className="block text-sm font-medium text-[#0a4e65] mb-3 tracking-wide">
+                  Organization *
+                </label>
+                <input
+                  type="text"
+                  name="form_submission[custom_10]"
+                  id="form_submission_custom_10"
+                  required
+                  className="w-full px-4 py-4 border-2 border-gray-200 rounded-lg shadow-sm bg-white/80 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-[#ffaf02] focus:border-[#ffaf02] transition-all duration-300 text-gray-800 placeholder-gray-400 group-hover:border-gray-300"
+                  placeholder="Enter your organization"
+                />
+              </div>
+              
+              <div className="group">
+                <label htmlFor="form_submission_custom_11" className="block text-sm font-medium text-[#0a4e65] mb-3 tracking-wide">
+                  Title
+                </label>
+                <input
+                  type="text"
+                  name="form_submission[custom_11]"
+                  id="form_submission_custom_11"
+                  className="w-full px-4 py-4 border-2 border-gray-200 rounded-lg shadow-sm bg-white/80 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-[#ffaf02] focus:border-[#ffaf02] transition-all duration-300 text-gray-800 placeholder-gray-400 group-hover:border-gray-300"
+                  placeholder="Enter your title"
+                />
+              </div>
+            </div>
+            
+            <div className="pt-6 border-t border-gray-200">
+              <button
+                type="submit"
+                className="w-full bg-[#ffaf02] hover:bg-[#e9a104] text-black font-bold px-8 py-4 rounded-full transition-all duration-300 text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-[1.02] active:scale-95 focus:outline-none focus:ring-4 focus:ring-[#ffaf02] focus:ring-opacity-50 group"
+              >
+                <span className="transition-transform duration-300 group-hover:tracking-wide">
+                  Request Invitation
+                </span>
+              </button>
+            </div>
+            
+            <p className="text-xs text-gray-500 text-center leading-relaxed">
+              By submitting this form, you agree to be contacted about CXO House membership opportunities.
+            </p>
+          </form>
+        </div>
+      </Modal>
     </main>
   );
 }
