@@ -71,14 +71,8 @@ export default function ThankYou() {
               </div>
             </div>
 
-            {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-in fade-in-50 slide-in-from-bottom duration-1000 delay-1100">
-              <Link 
-                href="/" 
-                className="inline-block bg-[#ffaf02] hover:bg-[#e9a104] text-black font-bold px-8 py-4 rounded-full transition-all duration-300 text-lg sm:text-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105 active:scale-95"
-              >
-                Return to Home
-              </Link>
+            {/* Contact Button */}
+            <div className="flex justify-center items-center animate-in fade-in-50 slide-in-from-bottom duration-1000 delay-1100">
               <a 
                 href="mailto:info@cxohouse.com" 
                 className="inline-block border-2 border-white text-white hover:bg-white hover:text-black font-bold px-8 py-4 rounded-full transition-all duration-300 text-lg sm:text-xl hover:scale-105 active:scale-95"

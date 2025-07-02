@@ -29,8 +29,8 @@ export default function Home() {
       >
         <div className="container mx-auto px-4">
           <div className="relative z-10 max-w-4xl px-4 sm:px-6 py-12 sm:py-16 text-center md:text-left">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[70px] xl:text-[90px] leading-[1.1] font-light mb-6 text-white">
-              Power your next move in customer experience.
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.1] font-light mb-6 text-white">
+              The first private Network ONLY for CXOs run by The Queen of CX, Blake Morgan.
             </h1>
             <p className="mb-8 text-gray-200 text-lg sm:text-xl md:text-2xl lg:text-3xl font-extralight max-w-[700px] leading-relaxed">
               CXO House is the private network for Chief Experience and Customer Officers—delivering the insight,
