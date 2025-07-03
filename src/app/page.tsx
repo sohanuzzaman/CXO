@@ -14,9 +14,9 @@ export default function Home() {
               role="banner"
               aria-label="CXO House main navigation">
         <div className="container mx-auto px-4 max-w-7xl">
-          <div className="logo w-[200px] sm:w-[240px] md:w-[300px] transition-transform duration-300 hover:scale-105">
+          <div className="logo w-[80px] sm:w-[100px] md:w-[120px] transition-transform duration-300 hover:scale-105 -mt-2">
             <Link href="/" className="block transition-opacity duration-200 hover:opacity-80 focus-ring" aria-label="CXO House homepage">
-              <Image src="/img/logo.png" alt="CXO House logo" width={300} height={80} className="w-full h-auto" priority />
+              <Image src="/img/CXO-svg.svg" alt="CXO House logo" width={120} height={30} className="w-full h-auto -mt-10" priority />
             </Link>
           </div>
         </div>
@@ -56,11 +56,11 @@ export default function Home() {
           <div className="w-full lg:w-[47%]">
             <div className="group transition-transform duration-500 hover:scale-105">
               <Image 
-                src="/img/lead.png" 
-                className="rounded-[35px] sm:rounded-[45px] lg:rounded-[55px] shadow-lg w-full group-hover:shadow-2xl transition-shadow duration-500" 
-                alt="Leadership" 
+                src="/img/blake-image.webp" 
+                className="rounded-[35px] sm:rounded-[45px] lg:rounded-[55px] shadow-lg w-full h-[400px] sm:h-[450px] lg:h-[500px] xl:h-[550px] object-cover group-hover:shadow-2xl transition-shadow duration-500" 
+                alt="Blake Morgan - The Queen of CX" 
                 width={600} 
-                height={400}
+                height={550}
               />
             </div>
           </div>
