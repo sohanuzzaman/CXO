@@ -7,9 +7,9 @@ export default function ThankYou() {
       {/* Header */}
       <header className="px-4 py-6 bg-[#0db8ff] text-white animate-in slide-in-from-top duration-700">
         <div className="container mx-auto px-4 max-w-7xl">
-          <div className="logo w-[200px] sm:w-[240px] md:w-[300px] transition-transform duration-300 hover:scale-105">
-            <Link href="/" className="block transition-opacity duration-200 hover:opacity-80">
-              <Image src="/img/logo.png" alt="logo" width={300} height={80} className="w-full h-auto" />
+          <div className="logo w-[80px] sm:w-[100px] md:w-[120px] transition-transform duration-300 hover:scale-105 -mt-2 mx-auto md:mx-0">
+            <Link href="/" className="block transition-opacity duration-200 hover:opacity-80" aria-label="CXO House homepage">
+              <Image src="/img/CXO-svg.svg" alt="CXO House logo" width={120} height={30} className="w-full h-auto -mt-8" />
             </Link>
           </div>
         </div>
