@@ -74,7 +74,7 @@ export default function ThankYou() {
             {/* Contact Button */}
             <div className="flex justify-center items-center animate-in fade-in-50 slide-in-from-bottom duration-1000 delay-1100">
               <a 
-                href="mailto:info@cxohouse.com" 
+                href="mailto:blake@cxohouse.com" 
                 className="inline-block border-2 border-white text-white hover:bg-white hover:text-black font-bold px-8 py-4 rounded-full transition-all duration-300 text-lg sm:text-xl hover:scale-105 active:scale-95"
               >
                 Contact Us
@@ -104,7 +104,12 @@ export default function ThankYou() {
               </p>
             </div>
             
-            <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 animate-in fade-in-50 slide-in-from-right delay-900">
+            <a 
+              href="https://www.linkedin.com/in/blakemichellemorgan/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="block bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 animate-in fade-in-50 slide-in-from-right delay-900"
+            >
               <div className="w-16 h-16 bg-[#0db8ff] rounded-full flex items-center justify-center mx-auto mb-4 transition-transform duration-300 hover:scale-110 hover:rotate-3">
                 <svg className="w-8 h-8 text-white transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z" />
@@ -114,21 +119,21 @@ export default function ThankYou() {
               <p className="text-gray-700 transition-colors duration-300 hover:text-gray-900">
                 Follow Blake Morgan on LinkedIn to stay updated on the latest customer experience insights and trends.
               </p>
-            </div>
+            </a>
           </div>
 
           <div className="bg-gradient-to-r from-[#0db8ff] to-[#0a4e65] rounded-xl p-8 text-white animate-in fade-in-50 slide-in-from-bottom delay-1100 hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
             <h3 className="text-2xl font-bold mb-4 animate-pulse">Questions?</h3>
-            <p className="text-lg mb-6">
+            <p className="text-lg">
               Blake is here to help. If you have any questions about your application or the CXO House community, 
-              don&apos;t hesitate to reach out.
+              don&apos;t hesitate to reach out at{' '}
+              <a 
+                href="mailto:blake@cxohouse.com" 
+                className="underline hover:text-yellow-300 transition-colors duration-300"
+              >
+                blake@cxohouse.com
+              </a>
             </p>
-            <a 
-              href="mailto:info@cxohouse.com" 
-              className="inline-block bg-white text-[#0db8ff] font-bold px-6 py-3 rounded-full hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 active:scale-95 hover:shadow-lg"
-            >
-              Get in Touch
-            </a>
           </div>
         </div>
       </section>
