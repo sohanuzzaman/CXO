@@ -14,9 +14,9 @@ export default function Home() {
               role="banner"
               aria-label="CXO House main navigation">
         <div className="container mx-auto px-4 max-w-7xl">
-          <div className="logo w-[80px] sm:w-[100px] md:w-[120px] transition-transform duration-300 hover:scale-105 -mt-2">
+          <div className="logo w-[80px] sm:w-[100px] md:w-[120px] transition-transform duration-300 hover:scale-105 -mt-2 mx-auto md:mx-0">
             <Link href="/" className="block transition-opacity duration-200 hover:opacity-80 focus-ring" aria-label="CXO House homepage">
-              <Image src="/img/CXO-svg.svg" alt="CXO House logo" width={120} height={30} className="w-full h-auto -mt-10" priority />
+              <Image src="/img/CXO-svg.svg" alt="CXO House logo" width={120} height={30} className="w-full h-auto -mt-8" priority />
             </Link>
           </div>
         </div>
