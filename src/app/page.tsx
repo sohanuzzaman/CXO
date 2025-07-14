@@ -30,7 +30,9 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="relative z-10 max-w-4xl px-4 sm:px-6 py-12 sm:py-16 text-center md:text-left">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.1] font-light mb-6 text-white">
-              The first private Network ONLY for CXOs run by The Queen of CX, Blake Morgan.
+              The first private network<br />
+              only for CXOs <br />
+              run by Blake Morgan<span className="italic font-normal" style={{ fontFamily: "'Brush Script MT', 'Lucida Handwriting', cursive" }}></span>
             </h1>
             <p className="mb-8 text-gray-200 text-lg sm:text-xl md:text-2xl lg:text-3xl font-extralight max-w-[700px] leading-relaxed">
               CXO House is the private network for Chief Experience and Customer Officers—delivering the insight,
@@ -294,10 +296,10 @@ export default function Home() {
           
           <div className="w-full md:w-[90%] lg:w-[86%] text-center lg:text-left">
             <h4 className="italic text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-white mb-2 animate-in fade-in-50 slide-in-from-left duration-1000 delay-600">About</h4>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-extrabold mb-6 sm:mb-8 lg:mb-10 animate-in fade-in-50 slide-in-from-left duration-1000 delay-800 hover:text-yellow-400 transition-colors">Blake Morgan</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-extrabold mb-6 sm:mb-8 lg:mb-10 animate-in fade-in-50 slide-in-from-left duration-1000 delay-800 hover:text-yellow-400 transition-colors italic font-normal" style={{ fontFamily: "'Brush Script MT', 'Lucida Handwriting', cursive" }}>Blake Morgan</h2>
             <div className="max-w-none lg:max-w-[600px] animate-in fade-in-50 slide-in-from-bottom duration-1000 delay-1000">
               <p className="mb-4 sm:mb-6 text-base sm:text-lg md:text-xl leading-relaxed text-white hover:text-gray-200 transition-colors duration-300">
-                Blake Morgan was called &quot;The Queen of CX&quot; by Meta. She is a customer experience futurist and author of three books on customer experience. Her new book is called The 8 Laws of Customer-Focused Leadership: The New Rules for Building A Business Around Today&apos;s Customer. Blake has taught courses at Columbia University, Rutgers Executive MBA program and UC San Diego. She is an instructor for LinkedIn Learning.
+                Blake Morgan was called &quot;The Queen of CX&quot; by Meta. She is a customer experience futurist and author of three books on customer experience. Her new book is called The 8 Laws of Customer-Focused Leadership: The New Rules for Building A Business Around Today&apos;s Customer. Blake has taught courses at Columbia University, Rutgers Executive MBA program, and UC San Diego. She is an instructor for LinkedIn Learning.
               </p>
               <p className="text-white text-base sm:text-lg md:text-xl leading-relaxed hover:text-gray-200 transition-colors duration-300">
                 Blake is the host of The Modern Customer Podcast. She lives in the Los Angeles Area with her husband, their two children and two dogs.
