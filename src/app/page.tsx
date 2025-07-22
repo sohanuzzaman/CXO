@@ -25,14 +25,15 @@ export default function Home() {
       {/* Hero Section */}
       <section 
         className="relative bg-cover bg-center h-screen flex items-center overflow-hidden" 
-        style={{ backgroundImage: "url('/img/hero-bg.webp')" }}
+        style={{ backgroundImage: "url('/img/header3.webp')" }}
       >
         <div className="container mx-auto px-4">
           <div className="relative z-10 max-w-4xl px-4 sm:px-6 py-12 sm:py-16 text-center md:text-left">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.1] font-light mb-6 text-white">
-              The first private network<br />
-              only for CXOs <br />
-              run by Blake Morgan<span className="italic font-normal" style={{ fontFamily: "'Brush Script MT', 'Lucida Handwriting', cursive" }}></span>
+              The first private<br />
+              Network ONLY<br />
+              for CXOs run by<br />
+              <span className="italic font-normal" style={{ fontFamily: "'Brush Script MT', 'Lucida Handwriting', cursive" }}>Blake Morgan</span>
             </h1>
             <p className="mb-8 text-gray-200 text-lg sm:text-xl md:text-2xl lg:text-3xl font-extralight max-w-[700px] leading-relaxed">
               CXO House is the private network for Chief Experience and Customer Officers—delivering the insight,
@@ -58,7 +59,7 @@ export default function Home() {
           <div className="w-full lg:w-[47%]">
             <div className="group transition-transform duration-500 hover:scale-105">
               <Image 
-                src="/img/blake-image.webp" 
+                src="/img/blake-smilling-full-height.jpg" 
                 className="rounded-[35px] sm:rounded-[45px] lg:rounded-[55px] shadow-lg w-full h-[400px] sm:h-[450px] lg:h-[500px] xl:h-[550px] object-cover group-hover:shadow-2xl transition-shadow duration-500" 
                 alt="Blake Morgan - The Queen of CX" 
                 width={600} 
