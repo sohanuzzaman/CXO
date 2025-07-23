@@ -24,25 +24,28 @@ export default function Home() {
 
       {/* Hero Section */}
       <section 
-        className="relative bg-cover bg-center h-screen flex items-center overflow-hidden" 
+        className="relative bg-cover bg-left md:bg-center h-screen flex items-center overflow-hidden" 
         style={{ backgroundImage: "url('/img/header3.webp')" }}
       >
-        <div className="container mx-auto px-4">
-          <div className="relative z-10 max-w-4xl px-4 sm:px-6 py-12 sm:py-16 text-center md:text-left">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.1] font-light mb-6 text-white">
+        {/* Dark overlay for better text readability on mobile */}
+        <div className="absolute inset-0 bg-black/30 md:bg-black/10"></div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="relative z-10 max-w-4xl px-4 sm:px-6 py-12 sm:py-16 text-center md:text-left hero-mobile-spacing">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[1.1] font-light mb-6 text-white hero-text-shadow mobile-large-text">
               The first private<br />
               Network ONLY<br />
               for CXOs run by<br />
               <span className="italic font-normal" style={{ fontFamily: "'Brush Script MT', 'Lucida Handwriting', cursive" }}>Blake Morgan</span>
             </h1>
-            <p className="mb-8 text-gray-200 text-lg sm:text-xl md:text-2xl lg:text-3xl font-extralight max-w-[700px] leading-relaxed">
+            <p className="mb-8 text-gray-100 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extralight max-w-[700px] leading-relaxed hero-text-shadow">
               CXO House is the private network for Chief Experience and Customer Officers—delivering the insight,
               connection, and strategic clarity needed to lead through change and elevate the customer experience at scale.
             </p>
             <div>
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="inline-block bg-[#ffaf02] hover:bg-[#e9a104] text-black font-bold px-8 py-4 rounded-full transition-all duration-300 mt-4 text-lg sm:text-xl md:text-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105 active:scale-95 focus-ring interactive-element group cursor-pointer border-0"
+                className="inline-block bg-[#ffaf02] hover:bg-[#e9a104] text-black font-bold px-10 py-5 rounded-full transition-all duration-300 mt-4 text-xl sm:text-2xl md:text-3xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105 active:scale-95 focus-ring interactive-element group cursor-pointer border-0 mobile-cta-button"
                 aria-label="Request an invitation to join CXO House"
               >
                 <span className="transition-transform duration-300 group-hover:tracking-wide">Request an Invitation</span>
@@ -69,11 +72,11 @@ export default function Home() {
           </div>
           {/* Text */}
           <div className="w-full lg:w-[53%] lg:pl-8 xl:pl-12">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light leading-tight mb-6 lg:mb-10">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light leading-tight mb-6 lg:mb-10">
               Lead from the Front Line of
               <span className="italic text-yellow-400 transition-colors duration-300 hover:text-yellow-300"> Customer Experience</span>
             </h2>
-            <ul className="space-y-3 sm:space-y-4 text-lg sm:text-xl font-light list-disc ml-5 leading-relaxed">
+            <ul className="space-y-3 sm:space-y-4 text-xl sm:text-2xl font-light list-disc ml-5 leading-relaxed">
               <li className="hover:text-yellow-200 transition-colors">Actionable insights from top CX leaders</li>
               <li className="hover:text-yellow-200 transition-colors">A trusted peer network of CCOs and CXOs</li>
               <li className="hover:text-yellow-200 transition-colors">Curated sessions on strategy, innovation, and leadership</li>
@@ -90,10 +93,10 @@ export default function Home() {
           <div className="bg-white rounded-2xl shadow-lg overflow-hidden z-[2] -translate-y-8 sm:-translate-y-10 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-12 group">
             <div className="flex flex-col md:flex-row justify-between items-stretch p-6 sm:p-8 lg:p-12 gap-6 lg:gap-8">
               <div className="w-full md:w-1/2 pr-0 md:pr-8 md:border-r md:border-r-[#b7b7b7] flex flex-col justify-center">
-                <h3 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl italic font-serif mb-4 sm:mb-6 text-black group-hover:text-[#0db8ff] transition-colors duration-500">
+                <h3 className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl italic font-serif mb-4 sm:mb-6 text-black group-hover:text-[#0db8ff] transition-colors duration-500">
                   Who It&apos;s For
                 </h3>
-                <p className="text-black text-lg sm:text-xl lg:text-2xl xl:text-3xl font-light leading-relaxed group-hover:text-gray-700 transition-colors duration-500">
+                <p className="text-black text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-light leading-relaxed group-hover:text-gray-700 transition-colors duration-500">
                   Our members are C-level executives leading customer, digital, and experience strategy across
                   industries:
                 </p>
@@ -122,7 +125,7 @@ export default function Home() {
 
           {/* Programs and Benefits */}
           <div className="text-center mt-12 sm:mt-16 lg:mt-20">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif italic text-black mb-12 sm:mb-16">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif italic text-black mb-12 sm:mb-16">
               Programs and Benefits
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 max-w-6xl mx-auto">
@@ -141,8 +144,8 @@ export default function Home() {
                     <path d="m14.75 19h-5.5c-1.517 0-2.75 1.233-2.75 2.75v1.5c0 .414.336.75.75.75h9.5c.414 0 .75-.336.75-.75v-1.5c0-1.517-1.233-2.75-2.75-2.75z" />
                   </svg>
                 </div>
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-black mb-2 font-basic group-hover:text-[#0db8ff] transition-colors duration-300">Peer Sessions</h3>
-                <p className="text-sm sm:text-base text-gray-700 italic leading-relaxed group-hover:text-gray-900 transition-colors duration-300">Monthly confidential forums</p>
+                <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-black mb-2 font-basic group-hover:text-[#0db8ff] transition-colors duration-300">Peer Sessions</h3>
+                <p className="text-base sm:text-lg text-gray-700 italic leading-relaxed group-hover:text-gray-900 transition-colors duration-300">Monthly confidential forums</p>
               </div>
 
               {/* Executive Roundtables */}
@@ -156,8 +159,8 @@ export default function Home() {
                     <path d="m100.433594 255.578125c0-14.878906-6.511719-28.261719-16.828125-37.464844 3.277343-14.238281 8.261719-28.085937 14.886719-41.105469 3.757812-7.382812.816406-16.414062-6.5625-20.171874-7.382813-3.753907-16.414063-.816407-20.171876 6.566406-6.847656 13.453125-12.1875 27.664062-15.980468 42.273437-1.828125-.203125-3.679688-.316406-5.5625-.316406-27.6875.003906-50.214844 22.527344-50.214844 50.21875 0 27.6875 22.527344 50.214844 50.214844 50.214844 1.433594 0 2.851562-.074219 4.253906-.191407 3.414062 14.707032 8.386719 29.054688 14.855469 42.640626 2.570312 5.398437 7.949219 8.554687 13.554687 8.554687 2.160156 0 4.355469-.46875 6.4375-1.460937 7.480469-3.558594 10.65625-12.511719 7.09375-19.992188-6.261718-13.148438-10.890625-27.125-13.796875-41.441406 10.890625-9.21875 17.820313-22.976563 17.820313-38.324219zm0 0" />
                   </svg>
                 </div>
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-black mb-2 font-basic group-hover:text-[#0db8ff] transition-colors duration-300">Executive Roundtables</h3>
-                <p className="text-sm sm:text-base text-gray-700 italic leading-relaxed group-hover:text-gray-900 transition-colors duration-300">Intimate CX leader discussions</p>
+                <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-black mb-2 font-basic group-hover:text-[#0db8ff] transition-colors duration-300">Executive Roundtables</h3>
+                <p className="text-base sm:text-lg text-gray-700 italic leading-relaxed group-hover:text-gray-900 transition-colors duration-300">Intimate CX leader discussions</p>
               </div>
 
               {/* Insights & Resources */}
@@ -176,8 +179,8 @@ export default function Home() {
                     </g>
                   </svg>
                 </div>
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-black mb-2 font-basic group-hover:text-[#0db8ff] transition-colors duration-300">Insights & Resources</h3>
-                <p className="text-sm sm:text-base text-gray-700 italic leading-relaxed group-hover:text-gray-900 transition-colors duration-300">Playbooks and benchmarks</p>
+                <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-black mb-2 font-basic group-hover:text-[#0db8ff] transition-colors duration-300">Insights & Resources</h3>
+                <p className="text-base sm:text-lg text-gray-700 italic leading-relaxed group-hover:text-gray-900 transition-colors duration-300">Playbooks and benchmarks</p>
               </div>
 
               {/* Private Community */}
@@ -199,14 +202,14 @@ export default function Home() {
                     </g>
                   </svg>
                 </div>
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-black mb-2 font-basic group-hover:text-[#0db8ff] transition-colors duration-300">Private Community</h3>
-                <p className="text-sm sm:text-base text-gray-700 italic leading-relaxed group-hover:text-gray-900 transition-colors duration-300">Trusted space to connect and grow</p>
+                <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-black mb-2 font-basic group-hover:text-[#0db8ff] transition-colors duration-300">Private Community</h3>
+                <p className="text-base sm:text-lg text-gray-700 italic leading-relaxed group-hover:text-gray-900 transition-colors duration-300">Trusted space to connect and grow</p>
               </div>
             </div>
             <div className="mt-10 sm:mt-12 lg:mt-16 animate-in fade-in-50 slide-in-from-bottom delay-[1500ms]">
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="inline-block bg-[#ffaf02] hover:bg-[#e9a104] text-black font-bold px-8 sm:px-10 lg:px-12 py-3 sm:py-4 rounded-full transition-all duration-300 text-lg sm:text-xl lg:text-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105 active:scale-95 focus-ring interactive-element group cursor-pointer border-0"
+                className="inline-block bg-[#ffaf02] hover:bg-[#e9a104] text-black font-bold px-10 sm:px-12 lg:px-14 py-4 sm:py-5 rounded-full transition-all duration-300 text-xl sm:text-2xl lg:text-3xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105 active:scale-95 focus-ring interactive-element group cursor-pointer border-0"
                 aria-label="Explore CXO House membership opportunities"
               >
                 <span className="transition-transform duration-300 group-hover:tracking-wide">Explore Membership</span>
@@ -296,10 +299,10 @@ export default function Home() {
           <div className="h-16 sm:h-24 md:h-32 lg:h-0"></div>
           
           <div className="w-full md:w-[90%] lg:w-[86%] text-center lg:text-left">
-            <h4 className="italic text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-white mb-2 animate-in fade-in-50 slide-in-from-left duration-1000 delay-600">About</h4>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-extrabold mb-6 sm:mb-8 lg:mb-10 animate-in fade-in-50 slide-in-from-left duration-1000 delay-800 hover:text-yellow-400 transition-colors italic font-normal" style={{ fontFamily: "'Brush Script MT', 'Lucida Handwriting', cursive" }}>Blake Morgan</h2>
+            <h4 className="italic text-3xl sm:text-4xl lg:text-5xl xl:text-6xl text-white mb-2 animate-in fade-in-50 slide-in-from-left duration-1000 delay-600">About</h4>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-9xl font-extrabold mb-6 sm:mb-8 lg:mb-10 animate-in fade-in-50 slide-in-from-left duration-1000 delay-800 hover:text-yellow-400 transition-colors italic font-normal" style={{ fontFamily: "'Brush Script MT', 'Lucida Handwriting', cursive" }}>Blake Morgan</h2>
             <div className="max-w-none lg:max-w-[600px] animate-in fade-in-50 slide-in-from-bottom duration-1000 delay-1000">
-              <p className="mb-4 sm:mb-6 text-base sm:text-lg md:text-xl leading-relaxed text-white hover:text-gray-200 transition-colors duration-300">
+              <p className="mb-4 sm:mb-6 text-lg sm:text-xl md:text-2xl leading-relaxed text-white hover:text-gray-200 transition-colors duration-300">
                 Blake Morgan was called &quot;The Queen of CX&quot; by Meta. She is a customer experience futurist and author of three books on customer experience. Her new book is called The 8 Laws of Customer-Focused Leadership: The New Rules for Building A Business Around Today&apos;s Customer. Blake has taught courses at Columbia University, Rutgers Executive MBA program, and UC San Diego. She is an instructor for LinkedIn Learning.
               </p>
               <p className="text-white text-base sm:text-lg md:text-xl leading-relaxed hover:text-gray-200 transition-colors duration-300">
