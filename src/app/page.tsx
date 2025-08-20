@@ -37,32 +37,31 @@ export default function Home() {
 
       {/* Hero Section */}
       <section
-        className="relative bg-cover bg-left md:bg-center h-screen flex items-center overflow-hidden"
+        className="hero-section relative bg-cover bg-left md:bg-center h-screen flex items-center overflow-hidden"
         style={{ backgroundImage: "url('/img/header3.webp')" }}
       >
         {/* Dark overlay for better text readability on mobile */}
         <div className="absolute inset-0 bg-black/30 md:bg-black/10"></div>
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="relative z-10 max-w-4xl px-4 sm:px-6 py-8 md:py-12 lg:py-16 text-center md:text-left hero-mobile-spacing">
-            <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.1] font-light mb-4 md:mb-6 text-white hero-text-shadow mobile-large-text">
-              The first private
-              <br />
-              Network ONLY
-              <br />
-              for CXOs run by
-              <br />
-              <span
-                className="italic font-normal"
-                style={{
-                  fontFamily:
-                    "'Brush Script MT', 'Lucida Handwriting', cursive",
-                }}
-              >
-                Blake Morgan
+          <div className="relative z-10 max-w-4xl px-4 sm:px-6 py-8 md:py-12 lg:py-16 text-left hero-mobile-spacing">
+            <h1 className="hero-heading text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.1] font-light mb-4 md:mb-6 text-white hero-text-shadow mobile-large-text">
+              <span className="hero-line">The first private </span>
+              <span className="hero-line">Network ONLY </span>
+              <span className="hero-line">for CXOs </span>
+              <span className="hero-line">
+                run by {""}
+                <span
+                  className="italic font-normal"
+                  style={{
+                    fontFamily: "'Brush Script MT', 'Lucida Handwriting', cursive",
+                  }}
+                >
+                  Blake Morgan
+                </span>
               </span>
             </h1>
-            <p className="mb-6 md:mb-8 text-gray-100 text-xl sm:text-xl md:text-2xl lg:text-3xl font-extralight max-w-[700px] leading-relaxed hero-text-shadow">
+            <p className="hero-subtext mb-6 md:mb-8 text-gray-100 text-xl sm:text-xl md:text-2xl lg:text-3xl font-extralight max-w-[700px] leading-relaxed hero-text-shadow">
               CXO House is the private network for Chief Experience and Customer
               Officers—delivering the insight, connection, and strategic clarity
               needed to lead through change and elevate the customer experience
@@ -344,7 +343,7 @@ export default function Home() {
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light italic mb-8 sm:mb-12 lg:mb-16 animate-in fade-in-50 slide-in-from-bottom duration-1000 delay-500">
             See Some of the Attending Executives
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 lg:gap-16 px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-8 xl:gap-12 px-4 sm:px-6 lg:px-8">
             {/* Card 1 */}
             <div className="flex flex-col items-center text-center group hover:scale-105 transition-all duration-500 animate-in fade-in-50 slide-in-from-left delay-700 p-4">
               <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl mb-4 sm:mb-6 group-hover:shadow-2xl transition-shadow duration-500 border-4 border-yellow-200 mx-auto focus-within:ring-4 focus-within:ring-yellow-400 focus-within:ring-opacity-50 w-fit">
@@ -401,6 +400,25 @@ export default function Home() {
               </h3>
               <p className="text-sm sm:text-base text-gray-300 leading-relaxed max-w-xs mx-auto group-hover:text-gray-100 transition-colors duration-300">
                 Chief Experience Officer at Cambridge Investment Research, Inc.
+              </p>
+            </div>
+            {/* Card 4 */}
+            <div className="flex flex-col items-center text-center group hover:scale-105 transition-all duration-500 animate-in fade-in-50 slide-in-from-right delay-[1300ms] p-4">
+              <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl mb-4 sm:mb-6 group-hover:shadow-2xl transition-shadow duration-500 border-4 border-yellow-200 mx-auto focus-within:ring-4 focus-within:ring-yellow-400 focus-within:ring-opacity-50 w-fit">
+                <Image
+                  src="/img/Chief Customer Officer at M&T Bank.jpg"
+                  alt="Portrait of Krista Phillips, Chief Customer Officer at M&T Bank"
+                  className="w-48 h-48 sm:w-56 sm:h-56 lg:w-60 lg:h-60 object-cover transition-transform duration-500 group-hover:scale-110"
+                  width={240}
+                  height={240}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              </div>
+              <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2 sm:mb-3 group-hover:text-yellow-400 transition-colors duration-300">
+                Krista Phillips
+              </h3>
+              <p className="text-sm sm:text-base text-gray-300 leading-relaxed max-w-xs mx-auto group-hover:text-gray-100 transition-colors duration-300">
+                Chief Customer Officer at M&T Bank
               </p>
             </div>
           </div>
