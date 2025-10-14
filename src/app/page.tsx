@@ -343,9 +343,9 @@ export default function Home() {
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light italic mb-8 sm:mb-12 lg:mb-16 animate-in fade-in-50 slide-in-from-bottom duration-1000 delay-500">
             See Some of the Attending Executives
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-10 lg:gap-6 xl:gap-8 px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap justify-center gap-8 sm:gap-10 lg:gap-8 xl:gap-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
             {/* Card 1 */}
-            <div className="flex flex-col items-center text-center group hover:scale-105 transition-all duration-500 animate-in fade-in-50 slide-in-from-left delay-700 p-4">
+            <div className="flex flex-col items-center text-center group hover:scale-105 transition-all duration-500 animate-in fade-in-50 slide-in-from-left delay-700 p-4 w-full sm:w-auto sm:min-w-[200px] sm:max-w-[240px]">
               <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl mb-4 sm:mb-6 group-hover:shadow-2xl transition-shadow duration-500 border-4 border-yellow-200 mx-auto focus-within:ring-4 focus-within:ring-yellow-400 focus-within:ring-opacity-50 w-fit">
                 <Image
                   src="/img/suzie.png"
@@ -365,7 +365,7 @@ export default function Home() {
               </p>
             </div>
             {/* Card 2 */}
-            <div className="flex flex-col items-center text-center group hover:scale-105 transition-all duration-500 animate-in fade-in-50 slide-in-from-bottom delay-900 p-4">
+            <div className="flex flex-col items-center text-center group hover:scale-105 transition-all duration-500 animate-in fade-in-50 slide-in-from-bottom delay-900 p-4 w-full sm:w-auto sm:min-w-[200px] sm:max-w-[240px]">
               <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl mb-4 sm:mb-6 group-hover:shadow-2xl transition-shadow duration-500 border-4 border-yellow-200 mx-auto focus-within:ring-4 focus-within:ring-yellow-400 focus-within:ring-opacity-50 w-fit">
                 <Image
                   src="/img/jeff.png"
@@ -384,7 +384,7 @@ export default function Home() {
               </p>
             </div>
             {/* Card 3 */}
-            <div className="flex flex-col items-center text-center group hover:scale-105 transition-all duration-500 animate-in fade-in-50 slide-in-from-right delay-[1100ms] p-4">
+            <div className="flex flex-col items-center text-center group hover:scale-105 transition-all duration-500 animate-in fade-in-50 slide-in-from-right delay-[1100ms] p-4 w-full sm:w-auto sm:min-w-[200px] sm:max-w-[240px]">
               <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl mb-4 sm:mb-6 group-hover:shadow-2xl transition-shadow duration-500 border-4 border-yellow-200 mx-auto focus-within:ring-4 focus-within:ring-yellow-400 focus-within:ring-opacity-50 w-fit">
                 <Image
                   src="/img/valarie.png"
@@ -403,7 +403,7 @@ export default function Home() {
               </p>
             </div>
             {/* Card 4 */}
-            <div className="flex flex-col items-center text-center group hover:scale-105 transition-all duration-500 animate-in fade-in-50 slide-in-from-right delay-[1300ms] p-4">
+            <div className="flex flex-col items-center text-center group hover:scale-105 transition-all duration-500 animate-in fade-in-50 slide-in-from-right delay-[1300ms] p-4 w-full sm:w-auto sm:min-w-[200px] sm:max-w-[240px]">
               <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl mb-4 sm:mb-6 group-hover:shadow-2xl transition-shadow duration-500 border-4 border-yellow-200 mx-auto focus-within:ring-4 focus-within:ring-yellow-400 focus-within:ring-opacity-50 w-fit">
                 <Image
                   src="/img/Chief Customer Officer at M&T Bank.jpg"
@@ -422,7 +422,7 @@ export default function Home() {
               </p>
             </div>
             {/* Card 5 */}
-            <div className="flex flex-col items-center text-center group hover:scale-105 transition-all duration-500 animate-in fade-in-50 slide-in-from-right delay-[1500ms] p-4">
+            <div className="flex flex-col items-center text-center group hover:scale-105 transition-all duration-500 animate-in fade-in-50 slide-in-from-right delay-[1500ms] p-4 w-full sm:w-auto sm:min-w-[200px] sm:max-w-[240px]">
               <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl mb-4 sm:mb-6 group-hover:shadow-2xl transition-shadow duration-500 border-4 border-yellow-200 mx-auto focus-within:ring-4 focus-within:ring-yellow-400 focus-within:ring-opacity-50 w-fit">
                 <Image
                   src="/img/Chief Experience Officer at Lenovo.jpg"
@@ -438,6 +438,44 @@ export default function Home() {
               </h3>
               <p className="text-sm sm:text-base text-gray-300 leading-relaxed max-w-xs mx-auto group-hover:text-gray-100 transition-colors duration-300">
                 Chief Experience Officer at Lenovo
+              </p>
+            </div>
+            {/* Card 6 */}
+            <div className="flex flex-col items-center text-center group hover:scale-105 transition-all duration-500 animate-in fade-in-50 slide-in-from-right delay-[1700ms] p-4 w-full sm:w-auto sm:min-w-[200px] sm:max-w-[240px]">
+              <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl mb-4 sm:mb-6 group-hover:shadow-2xl transition-shadow duration-500 border-4 border-yellow-200 mx-auto focus-within:ring-4 focus-within:ring-yellow-400 focus-within:ring-opacity-50 w-fit">
+                <Image
+                  src="/img/Brian Higgins.jpeg"
+                  alt="Portrait of Brian Higgins, Chief Customer Experience Officer at Verizon"
+                  className="w-48 h-48 sm:w-56 sm:h-56 lg:w-60 lg:h-60 object-cover transition-transform duration-500 group-hover:scale-110"
+                  width={240}
+                  height={240}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              </div>
+              <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2 sm:mb-3 group-hover:text-yellow-400 transition-colors duration-300">
+                Brian Higgins
+              </h3>
+              <p className="text-sm sm:text-base text-gray-300 leading-relaxed max-w-xs mx-auto group-hover:text-gray-100 transition-colors duration-300">
+                Chief Customer Experience Officer at Verizon
+              </p>
+            </div>
+            {/* Card 7 */}
+            <div className="flex flex-col items-center text-center group hover:scale-105 transition-all duration-500 animate-in fade-in-50 slide-in-from-right delay-[1900ms] p-4 w-full sm:w-auto sm:min-w-[200px] sm:max-w-[240px]">
+              <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl mb-4 sm:mb-6 group-hover:shadow-2xl transition-shadow duration-500 border-4 border-yellow-200 mx-auto focus-within:ring-4 focus-within:ring-yellow-400 focus-within:ring-opacity-50 w-fit">
+                <Image
+                  src="/img/Michael Watson.jpeg"
+                  alt="Portrait of Michael Watson, Chief Customer Officer at WM"
+                  className="w-48 h-48 sm:w-56 sm:h-56 lg:w-60 lg:h-60 object-cover transition-transform duration-500 group-hover:scale-110"
+                  width={240}
+                  height={240}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              </div>
+              <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2 sm:mb-3 group-hover:text-yellow-400 transition-colors duration-300">
+                Michael Watson
+              </h3>
+              <p className="text-sm sm:text-base text-gray-300 leading-relaxed max-w-xs mx-auto group-hover:text-gray-100 transition-colors duration-300">
+                Chief Customer Officer at WM
               </p>
             </div>
           </div>
