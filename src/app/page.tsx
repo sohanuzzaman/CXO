@@ -343,140 +343,173 @@ export default function Home() {
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light italic mb-8 sm:mb-12 lg:mb-16 animate-in fade-in-50 slide-in-from-bottom duration-1000 delay-500">
             See Some of the Attending Executives
           </h2>
-          <div className="flex flex-wrap justify-center gap-8 sm:gap-10 lg:gap-8 xl:gap-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+          <div className="flex flex-col items-center gap-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            {/* Top Row - 4 items */}
+            <div className="flex flex-wrap justify-center gap-8 sm:gap-10 lg:gap-12 xl:gap-16 w-full">
             {/* Card 1 */}
-            <div className="flex flex-col items-center text-center group hover:scale-105 transition-all duration-500 animate-in fade-in-50 slide-in-from-left delay-700 p-4 w-full sm:w-auto sm:min-w-[200px] sm:max-w-[240px]">
-              <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl mb-4 sm:mb-6 group-hover:shadow-2xl transition-shadow duration-500 border-4 border-yellow-200 mx-auto focus-within:ring-4 focus-within:ring-yellow-400 focus-within:ring-opacity-50 w-fit">
+            <div className="flex flex-col items-center text-center group transition-all duration-500 animate-in fade-in-50 slide-in-from-left delay-700 w-full sm:w-auto sm:max-w-[180px]">
+              <div className="relative overflow-hidden rounded-full mb-4 group-hover:shadow-2xl transition-shadow duration-500 border-2 border-yellow-400/30 group-hover:border-yellow-400 mx-auto w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36">
                 <Image
                   src="/img/suzie.png"
                   alt="Portrait of Suzie Dieth, Vice President and Chief Experience Officer at NRG Consumer Energy"
-                  className="w-48 h-48 sm:w-56 sm:h-56 lg:w-60 lg:h-60 object-cover transition-transform duration-500 group-hover:scale-110"
-                  width={240}
-                  height={240}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  width={144}
+                  height={144}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
-              <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2 sm:mb-3 group-hover:text-yellow-400 transition-colors duration-300">
-                Suzie Dieth
-              </h3>
-              <p className="text-sm sm:text-base text-gray-300 leading-relaxed max-w-xs mx-auto group-hover:text-gray-100 transition-colors duration-300">
-                Vice President and Chief Experience Officer at NRG Consumer
-                Energy
-              </p>
+              <div className="space-y-1">
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-yellow-400 leading-none group-hover:scale-105 transition-transform duration-300">
+                  NRG
+                </h3>
+                <p className="text-xs sm:text-sm lg:text-base font-medium text-white/85 leading-tight px-1">
+                  VP & Chief Experience Officer
+                </p>
+                <p className="text-sm font-light text-gray-500 pt-0.5">
+                  Suzie Dieth
+                </p>
+              </div>
             </div>
             {/* Card 2 */}
-            <div className="flex flex-col items-center text-center group hover:scale-105 transition-all duration-500 animate-in fade-in-50 slide-in-from-bottom delay-900 p-4 w-full sm:w-auto sm:min-w-[200px] sm:max-w-[240px]">
-              <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl mb-4 sm:mb-6 group-hover:shadow-2xl transition-shadow duration-500 border-4 border-yellow-200 mx-auto focus-within:ring-4 focus-within:ring-yellow-400 focus-within:ring-opacity-50 w-fit">
+            <div className="flex flex-col items-center text-center group transition-all duration-500 animate-in fade-in-50 slide-in-from-bottom delay-900 w-full sm:w-auto sm:max-w-[180px]">
+              <div className="relative overflow-hidden rounded-full mb-4 group-hover:shadow-2xl transition-shadow duration-500 border-2 border-yellow-400/30 group-hover:border-yellow-400 mx-auto w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36">
                 <Image
                   src="/img/jeff.png"
                   alt="Portrait of Jeff Gelfuso, Chief Product, Experience, Design Officer at Qualtrics"
-                  className="w-48 h-48 sm:w-56 sm:h-56 lg:w-60 lg:h-60 object-cover transition-transform duration-500 group-hover:scale-110"
-                  width={240}
-                  height={240}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  width={144}
+                  height={144}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
-              <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2 sm:mb-3 group-hover:text-yellow-400 transition-colors duration-300">
-                Jeff Gelfuso
-              </h3>
-              <p className="text-sm sm:text-base text-gray-300 leading-relaxed max-w-xs mx-auto group-hover:text-gray-100 transition-colors duration-300">
-                Chief Product, Experience, Design Officer at Qualtrics
-              </p>
+              <div className="space-y-1">
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-yellow-400 leading-none group-hover:scale-105 transition-transform duration-300">
+                  Qualtrics
+                </h3>
+                <p className="text-xs sm:text-sm lg:text-base font-medium text-white/85 leading-tight px-1">
+                  Chief Product, Experience, Design Officer
+                </p>
+                <p className="text-sm font-light text-gray-500 pt-0.5">
+                  Jeff Gelfuso
+                </p>
+              </div>
             </div>
             {/* Card 3 */}
-            <div className="flex flex-col items-center text-center group hover:scale-105 transition-all duration-500 animate-in fade-in-50 slide-in-from-right delay-[1100ms] p-4 w-full sm:w-auto sm:min-w-[200px] sm:max-w-[240px]">
-              <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl mb-4 sm:mb-6 group-hover:shadow-2xl transition-shadow duration-500 border-4 border-yellow-200 mx-auto focus-within:ring-4 focus-within:ring-yellow-400 focus-within:ring-opacity-50 w-fit">
+            <div className="flex flex-col items-center text-center group transition-all duration-500 animate-in fade-in-50 slide-in-from-right delay-[1100ms] w-full sm:w-auto sm:max-w-[180px]">
+              <div className="relative overflow-hidden rounded-full mb-4 group-hover:shadow-2xl transition-shadow duration-500 border-2 border-yellow-400/30 group-hover:border-yellow-400 mx-auto w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36">
                 <Image
                   src="/img/valarie.png"
                   alt="Portrait of Valarie Vest, Chief Experience Officer at Cambridge Investment Research, Inc."
-                  className="w-48 h-48 sm:w-56 sm:h-56 lg:w-60 lg:h-60 object-cover transition-transform duration-500 group-hover:scale-110"
-                  width={240}
-                  height={240}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  width={144}
+                  height={144}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
-              <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2 sm:mb-3 group-hover:text-yellow-400 transition-colors duration-300">
-                Valarie Vest
-              </h3>
-              <p className="text-sm sm:text-base text-gray-300 leading-relaxed max-w-xs mx-auto group-hover:text-gray-100 transition-colors duration-300">
-                Chief Experience Officer at Cambridge Investment Research, Inc.
-              </p>
+              <div className="space-y-1">
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-yellow-400 leading-none group-hover:scale-105 transition-transform duration-300">
+                  Cambridge
+                </h3>
+                <p className="text-xs sm:text-sm lg:text-base font-medium text-white/85 leading-tight px-1">
+                  Chief Experience Officer
+                </p>
+                <p className="text-sm font-light text-gray-500 pt-0.5">
+                  Valarie Vest
+                </p>
+              </div>
             </div>
             {/* Card 4 */}
-            <div className="flex flex-col items-center text-center group hover:scale-105 transition-all duration-500 animate-in fade-in-50 slide-in-from-right delay-[1300ms] p-4 w-full sm:w-auto sm:min-w-[200px] sm:max-w-[240px]">
-              <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl mb-4 sm:mb-6 group-hover:shadow-2xl transition-shadow duration-500 border-4 border-yellow-200 mx-auto focus-within:ring-4 focus-within:ring-yellow-400 focus-within:ring-opacity-50 w-fit">
+            <div className="flex flex-col items-center text-center group transition-all duration-500 animate-in fade-in-50 slide-in-from-right delay-[1300ms] w-full sm:w-auto sm:max-w-[180px]">
+              <div className="relative overflow-hidden rounded-full mb-4 group-hover:shadow-2xl transition-shadow duration-500 border-2 border-yellow-400/30 group-hover:border-yellow-400 mx-auto w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36">
                 <Image
                   src="/img/Chief Customer Officer at M&T Bank.jpg"
                   alt="Portrait of Krista Phillips, Chief Customer Officer at M&T Bank"
-                  className="w-48 h-48 sm:w-56 sm:h-56 lg:w-60 lg:h-60 object-cover transition-transform duration-500 group-hover:scale-110"
-                  width={240}
-                  height={240}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  width={144}
+                  height={144}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
-              <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2 sm:mb-3 group-hover:text-yellow-400 transition-colors duration-300">
-                Krista Phillips
-              </h3>
-              <p className="text-sm sm:text-base text-gray-300 leading-relaxed max-w-xs mx-auto group-hover:text-gray-100 transition-colors duration-300">
-                Chief Customer Officer at M&T Bank
-              </p>
+              <div className="space-y-1">
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-yellow-400 leading-none group-hover:scale-105 transition-transform duration-300">
+                  M&T Bank
+                </h3>
+                <p className="text-xs sm:text-sm lg:text-base font-medium text-white/85 leading-tight px-1">
+                  Chief Customer Officer
+                </p>
+                <p className="text-sm font-light text-gray-500 pt-0.5">
+                  Krista Phillips
+                </p>
+              </div>
             </div>
+            </div>
+            {/* Bottom Row - 3 items */}
+            <div className="flex flex-wrap justify-center gap-8 sm:gap-10 lg:gap-12 xl:gap-16 w-full">
             {/* Card 5 */}
-            <div className="flex flex-col items-center text-center group hover:scale-105 transition-all duration-500 animate-in fade-in-50 slide-in-from-right delay-[1500ms] p-4 w-full sm:w-auto sm:min-w-[200px] sm:max-w-[240px]">
-              <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl mb-4 sm:mb-6 group-hover:shadow-2xl transition-shadow duration-500 border-4 border-yellow-200 mx-auto focus-within:ring-4 focus-within:ring-yellow-400 focus-within:ring-opacity-50 w-fit">
+            <div className="flex flex-col items-center text-center group transition-all duration-500 animate-in fade-in-50 slide-in-from-right delay-[1500ms] w-full sm:w-auto sm:max-w-[180px]">
+              <div className="relative overflow-hidden rounded-full mb-4 group-hover:shadow-2xl transition-shadow duration-500 border-2 border-yellow-400/30 group-hover:border-yellow-400 mx-auto w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36">
                 <Image
                   src="/img/Chief Experience Officer at Lenovo.jpg"
                   alt="Portrait of Dilip Bhatia, Chief Experience Officer at Lenovo"
-                  className="w-48 h-48 sm:w-56 sm:h-56 lg:w-60 lg:h-60 object-cover transition-transform duration-500 group-hover:scale-110"
-                  width={240}
-                  height={240}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  width={144}
+                  height={144}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
-              <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2 sm:mb-3 group-hover:text-yellow-400 transition-colors duration-300">
-                Dilip Bhatia
-              </h3>
-              <p className="text-sm sm:text-base text-gray-300 leading-relaxed max-w-xs mx-auto group-hover:text-gray-100 transition-colors duration-300">
-                Chief Experience Officer at Lenovo
-              </p>
+              <div className="space-y-1">
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-yellow-400 leading-none group-hover:scale-105 transition-transform duration-300">
+                  Lenovo
+                </h3>
+                <p className="text-xs sm:text-sm lg:text-base font-medium text-white/85 leading-tight px-1">
+                  Chief Experience Officer
+                </p>
+                <p className="text-sm font-light text-gray-500 pt-0.5">
+                  Dilip Bhatia
+                </p>
+              </div>
             </div>
             {/* Card 6 */}
-            <div className="flex flex-col items-center text-center group hover:scale-105 transition-all duration-500 animate-in fade-in-50 slide-in-from-right delay-[1700ms] p-4 w-full sm:w-auto sm:min-w-[200px] sm:max-w-[240px]">
-              <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl mb-4 sm:mb-6 group-hover:shadow-2xl transition-shadow duration-500 border-4 border-yellow-200 mx-auto focus-within:ring-4 focus-within:ring-yellow-400 focus-within:ring-opacity-50 w-fit">
+            <div className="flex flex-col items-center text-center group transition-all duration-500 animate-in fade-in-50 slide-in-from-right delay-[1700ms] w-full sm:w-auto sm:max-w-[180px]">
+              <div className="relative overflow-hidden rounded-full mb-4 group-hover:shadow-2xl transition-shadow duration-500 border-2 border-yellow-400/30 group-hover:border-yellow-400 mx-auto w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36">
                 <Image
                   src="/img/Brian Higgins.jpeg"
                   alt="Portrait of Brian Higgins, Chief Customer Experience Officer at Verizon"
-                  className="w-48 h-48 sm:w-56 sm:h-56 lg:w-60 lg:h-60 object-cover transition-transform duration-500 group-hover:scale-110"
-                  width={240}
-                  height={240}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  width={144}
+                  height={144}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
-              <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2 sm:mb-3 group-hover:text-yellow-400 transition-colors duration-300">
-                Brian Higgins
-              </h3>
-              <p className="text-sm sm:text-base text-gray-300 leading-relaxed max-w-xs mx-auto group-hover:text-gray-100 transition-colors duration-300">
-                Chief Customer Experience Officer at Verizon
-              </p>
+              <div className="space-y-1">
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-yellow-400 leading-none group-hover:scale-105 transition-transform duration-300">
+                  Verizon
+                </h3>
+                <p className="text-xs sm:text-sm lg:text-base font-medium text-white/85 leading-tight px-1">
+                  Chief Customer Experience Officer
+                </p>
+                <p className="text-sm font-light text-gray-500 pt-0.5">
+                  Brian Higgins
+                </p>
+              </div>
             </div>
             {/* Card 7 */}
-            <div className="flex flex-col items-center text-center group hover:scale-105 transition-all duration-500 animate-in fade-in-50 slide-in-from-right delay-[1900ms] p-4 w-full sm:w-auto sm:min-w-[200px] sm:max-w-[240px]">
-              <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl mb-4 sm:mb-6 group-hover:shadow-2xl transition-shadow duration-500 border-4 border-yellow-200 mx-auto focus-within:ring-4 focus-within:ring-yellow-400 focus-within:ring-opacity-50 w-fit">
+            <div className="flex flex-col items-center text-center group transition-all duration-500 animate-in fade-in-50 slide-in-from-right delay-[1900ms] w-full sm:w-auto sm:max-w-[180px]">
+              <div className="relative overflow-hidden rounded-full mb-4 group-hover:shadow-2xl transition-shadow duration-500 border-2 border-yellow-400/30 group-hover:border-yellow-400 mx-auto w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36">
                 <Image
                   src="/img/Michael Watson.jpeg"
                   alt="Portrait of Michael Watson, Chief Customer Officer at WM"
-                  className="w-48 h-48 sm:w-56 sm:h-56 lg:w-60 lg:h-60 object-cover transition-transform duration-500 group-hover:scale-110"
-                  width={240}
-                  height={240}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  width={144}
+                  height={144}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
-              <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2 sm:mb-3 group-hover:text-yellow-400 transition-colors duration-300">
-                Michael Watson
-              </h3>
-              <p className="text-sm sm:text-base text-gray-300 leading-relaxed max-w-xs mx-auto group-hover:text-gray-100 transition-colors duration-300">
-                Chief Customer Officer at WM
-              </p>
+              <div className="space-y-1">
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-yellow-400 leading-none group-hover:scale-105 transition-transform duration-300">
+                  WM
+                </h3>
+                <p className="text-xs sm:text-sm lg:text-base font-medium text-white/85 leading-tight px-1">
+                  Chief Customer Officer
+                </p>
+                <p className="text-sm font-light text-gray-500 pt-0.5">
+                  Michael Watson
+                </p>
+              </div>
+            </div>
             </div>
           </div>
         </div>
