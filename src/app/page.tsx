@@ -364,7 +364,7 @@ export default function Home() {
                 <p className="text-xs sm:text-sm lg:text-base font-medium text-white/85 leading-tight px-1">
                   VP & Chief Experience Officer
                 </p>
-                <p className="text-sm font-light text-gray-500 pt-0.5">
+                <p className="text-xs sm:text-sm lg:text-base font-light text-white pt-0.5">
                   Suzie Dieth
                 </p>
               </div>
@@ -387,7 +387,7 @@ export default function Home() {
                 <p className="text-xs sm:text-sm lg:text-base font-medium text-white/85 leading-tight px-1">
                   Chief Product, Experience, Design Officer
                 </p>
-                <p className="text-sm font-light text-gray-500 pt-0.5">
+                <p className="text-xs sm:text-sm lg:text-base font-light text-white pt-0.5">
                   Jeff Gelfuso
                 </p>
               </div>
@@ -410,7 +410,7 @@ export default function Home() {
                 <p className="text-xs sm:text-sm lg:text-base font-medium text-white/85 leading-tight px-1">
                   Chief Experience Officer
                 </p>
-                <p className="text-sm font-light text-gray-500 pt-0.5">
+                <p className="text-xs sm:text-sm lg:text-base font-light text-white pt-0.5">
                   Valarie Vest
                 </p>
               </div>
@@ -433,7 +433,7 @@ export default function Home() {
                 <p className="text-xs sm:text-sm lg:text-base font-medium text-white/85 leading-tight px-1">
                   Chief Customer Officer
                 </p>
-                <p className="text-sm font-light text-gray-500 pt-0.5">
+                <p className="text-xs sm:text-sm lg:text-base font-light text-white pt-0.5">
                   Krista Phillips
                 </p>
               </div>
@@ -459,7 +459,7 @@ export default function Home() {
                 <p className="text-xs sm:text-sm lg:text-base font-medium text-white/85 leading-tight px-1">
                   Chief Experience Officer
                 </p>
-                <p className="text-sm font-light text-gray-500 pt-0.5">
+                <p className="text-xs sm:text-sm lg:text-base font-light text-white pt-0.5">
                   Dilip Bhatia
                 </p>
               </div>
@@ -482,7 +482,7 @@ export default function Home() {
                 <p className="text-xs sm:text-sm lg:text-base font-medium text-white/85 leading-tight px-1">
                   Chief Customer Experience Officer
                 </p>
-                <p className="text-sm font-light text-gray-500 pt-0.5">
+                <p className="text-xs sm:text-sm lg:text-base font-light text-white pt-0.5">
                   Brian Higgins
                 </p>
               </div>
@@ -505,7 +505,7 @@ export default function Home() {
                 <p className="text-xs sm:text-sm lg:text-base font-medium text-white/85 leading-tight px-1">
                   Chief Customer Officer
                 </p>
-                <p className="text-sm font-light text-gray-500 pt-0.5">
+                <p className="text-xs sm:text-sm lg:text-base font-light text-white pt-0.5">
                   Michael Watson
                 </p>
               </div>
