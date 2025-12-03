@@ -510,6 +510,52 @@ export default function Home() {
                 </p>
               </div>
             </div>
+            {/* Card 8 */}
+            <div className="flex flex-col items-center text-center group transition-all duration-500 animate-in fade-in-50 slide-in-from-right delay-[2100ms] w-full sm:w-auto sm:max-w-[180px]">
+              <div className="relative overflow-hidden rounded-full mb-4 group-hover:shadow-2xl transition-shadow duration-500 border-2 border-yellow-400/30 group-hover:border-yellow-400 mx-auto w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36">
+                <Image
+                  src="/img/Tiffany Menyhart.jpg"
+                  alt="Portrait of Tiffany Menyhart, Chief Customer Officer at The Hershey Company"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  width={144}
+                  height={144}
+                />
+              </div>
+              <div className="space-y-1">
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-yellow-400 leading-none group-hover:scale-105 transition-transform duration-300">
+                  The Hershey Company
+                </h3>
+                <p className="text-xs sm:text-sm lg:text-base font-medium text-white/85 leading-tight px-1">
+                  Chief Customer Officer
+                </p>
+                <p className="text-xs sm:text-sm lg:text-base font-light text-white pt-0.5">
+                  Tiffany Menyhart
+                </p>
+              </div>
+            </div>
+            {/* Card 9 */}
+            <div className="flex flex-col items-center text-center group transition-all duration-500 animate-in fade-in-50 slide-in-from-right delay-[2300ms] w-full sm:w-auto sm:max-w-[180px]">
+              <div className="relative overflow-hidden rounded-full mb-4 group-hover:shadow-2xl transition-shadow duration-500 border-2 border-yellow-400/30 group-hover:border-yellow-400 mx-auto w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36">
+                <Image
+                  src="/img/Allison Landers.jpg"
+                  alt="Portrait of Allison Landers, Chief Experience Officer, Banking & Lending at UBS"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  width={144}
+                  height={144}
+                />
+              </div>
+              <div className="space-y-1">
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-yellow-400 leading-none group-hover:scale-105 transition-transform duration-300">
+                  UBS
+                </h3>
+                <p className="text-xs sm:text-sm lg:text-base font-medium text-white/85 leading-tight px-1">
+                  Chief Experience Officer, Banking & Lending
+                </p>
+                <p className="text-xs sm:text-sm lg:text-base font-light text-white pt-0.5">
+                  Allison Landers
+                </p>
+              </div>
+            </div>
             </div>
           </div>
         </div>
