@@ -16,7 +16,7 @@ export default function Home() {
         aria-label="CXO House main navigation"
       >
         <div className="container mx-auto px-4 max-w-7xl flex flex-wrap items-center justify-between gap-4">
-          <div className="logo w-[80px] sm:w-[100px] md:w-[120px] transition-transform duration-300 hover:scale-105 -mt-2 mx-auto md:mx-0 md:order-1 order-2 md:flex-none flex-1 min-w-0" style={{ justifyContent: "inherit" }}>
+          <div className="logo w-[80px] sm:w-[100px] md:w-[120px] transition-transform duration-300 hover:scale-105 -mt-2 mx-auto md:mx-0 md:order-1 order-2 md:flex-none flex-1 min-w-0">
             <Link
               href="/"
               className="block transition-opacity duration-200 hover:opacity-80 focus-ring"
