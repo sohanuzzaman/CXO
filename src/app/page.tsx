@@ -15,8 +15,8 @@ export default function Home() {
         role="banner"
         aria-label="CXO House main navigation"
       >
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="logo w-[80px] sm:w-[100px] md:w-[120px] transition-transform duration-300 hover:scale-105 -mt-2 mx-auto md:mx-0">
+        <div className="container mx-auto px-4 max-w-7xl flex flex-wrap items-center justify-between gap-4">
+          <div className="logo w-[80px] sm:w-[100px] md:w-[120px] transition-transform duration-300 hover:scale-105 -mt-2 mx-auto md:mx-0 md:order-1 order-2 md:flex-none flex-1 min-w-0" style={{ justifyContent: "inherit" }}>
             <Link
               href="/"
               className="block transition-opacity duration-200 hover:opacity-80 focus-ring"
@@ -32,6 +32,14 @@ export default function Home() {
               />
             </Link>
           </div>
+          <a
+            href="https://www.blakemichellemorgan.com/"
+            className="order-1 md:order-2 inline-flex items-center gap-2 px-4 py-2 rounded-full border-2 border-white/80 hover:bg-white/15 hover:border-white text-white text-sm sm:text-base font-medium transition-colors duration-200 focus-ring whitespace-nowrap"
+            aria-label="Back to Blake Morgan website"
+          >
+            <span aria-hidden="true">←</span>
+            Back to Blake Morgan
+          </a>
         </div>
       </header>
 

@@ -6,12 +6,20 @@ export default function ThankYou() {
     <div className="animate-in fade-in duration-500">
       {/* Header */}
       <header className="py-2 bg-[#0db8ff] text-white animate-in slide-in-from-top duration-700">
-        <div className="container mx-auto max-w-7xl px-4">
-          <div className="logo w-[60px] sm:w-[80px] md:w-[100px] landscape-logo transition-transform duration-300 hover:scale-105 mx-auto md:mx-0">
+        <div className="container mx-auto max-w-7xl px-4 flex flex-wrap items-center justify-between gap-4">
+          <div className="logo w-[60px] sm:w-[80px] md:w-[100px] landscape-logo transition-transform duration-300 hover:scale-105 mx-auto md:mx-0 md:order-1 order-2 md:flex-none flex-1 min-w-0">
             <Link href="/" className="block transition-opacity duration-200 hover:opacity-80" aria-label="CXO House homepage">
               <Image src="/img/CXO-svg.svg" alt="CXO House logo" width={120} height={30} className="w-full h-auto" />
             </Link>
           </div>
+          <a
+            href="https://www.blakemichellemorgan.com/"
+            className="order-1 md:order-2 inline-flex items-center gap-2 px-4 py-2 rounded-full border-2 border-white/80 hover:bg-white/15 hover:border-white text-white text-sm sm:text-base font-medium transition-colors duration-200 focus-ring whitespace-nowrap"
+            aria-label="Back to Blake Morgan website"
+          >
+            <span aria-hidden="true">←</span>
+            Back to Blake Morgan
+          </a>
         </div>
       </header>
 
