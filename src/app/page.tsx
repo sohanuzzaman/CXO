@@ -369,8 +369,8 @@ export default function Home() {
             See Some of the Attending Executives
           </h2>
           <div className="flex flex-col items-center gap-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-            {/* Top Row - 4 items */}
-            <div className="flex flex-wrap justify-center gap-8 sm:gap-10 lg:gap-12 xl:gap-16 w-full">
+            {/* Top Row - 5 items */}
+            <div className="flex flex-wrap justify-center gap-8 sm:gap-10 lg:gap-12 xl:gap-14 w-full">
             {/* Card 1 */}
             <div className="flex flex-col items-center text-center group transition-all duration-500 animate-in fade-in-50 slide-in-from-left delay-700 w-full sm:w-auto sm:max-w-[200px]">
               <div className="relative overflow-hidden rounded-full mb-4 group-hover:shadow-2xl transition-shadow duration-500 border-2 border-yellow-400/30 group-hover:border-yellow-400 mx-auto w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36">
@@ -463,9 +463,6 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            </div>
-            {/* Bottom Row - 3 items */}
-            <div className="flex flex-wrap justify-center gap-8 sm:gap-10 lg:gap-12 xl:gap-16 w-full">
             {/* Card 5 */}
             <div className="flex flex-col items-center text-center group transition-all duration-500 animate-in fade-in-50 slide-in-from-right delay-[1500ms] w-full sm:w-auto sm:max-w-[200px]">
               <div className="relative overflow-hidden rounded-full mb-4 group-hover:shadow-2xl transition-shadow duration-500 border-2 border-yellow-400/30 group-hover:border-yellow-400 mx-auto w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36">
@@ -489,8 +486,11 @@ export default function Home() {
                 </p>
               </div>
             </div>
+            </div>
+            {/* Bottom Row - 5 items */}
+            <div className="flex flex-wrap justify-center gap-8 sm:gap-10 lg:gap-12 xl:gap-14 w-full">
             {/* Card 6 */}
-            <div className="flex flex-col items-center text-center group transition-all duration-500 animate-in fade-in-50 slide-in-from-right delay-[1700ms] w-full sm:w-auto sm:max-w-[200px]">
+            <div className="flex flex-col items-center text-center group transition-all duration-500 animate-in fade-in-50 slide-in-from-left delay-[1700ms] w-full sm:w-auto sm:max-w-[200px]">
               <div className="relative overflow-hidden rounded-full mb-4 group-hover:shadow-2xl transition-shadow duration-500 border-2 border-yellow-400/30 group-hover:border-yellow-400 mx-auto w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36">
                 <Image
                   src="/img/Brian Higgins.jpeg"
@@ -513,7 +513,7 @@ export default function Home() {
               </div>
             </div>
             {/* Card 7 */}
-            <div className="flex flex-col items-center text-center group transition-all duration-500 animate-in fade-in-50 slide-in-from-right delay-[1900ms] w-full sm:w-auto sm:max-w-[200px]">
+            <div className="flex flex-col items-center text-center group transition-all duration-500 animate-in fade-in-50 slide-in-from-bottom delay-[1900ms] w-full sm:w-auto sm:max-w-[200px]">
               <div className="relative overflow-hidden rounded-full mb-4 group-hover:shadow-2xl transition-shadow duration-500 border-2 border-yellow-400/30 group-hover:border-yellow-400 mx-auto w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36">
                 <Image
                   src="/img/Michael Watson.jpeg"
