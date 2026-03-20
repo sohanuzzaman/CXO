@@ -10,8 +10,24 @@ const interTight = Inter_Tight({
 });
 
 export const metadata: Metadata = {
-  title: "CXO",
-  description: "CXO House - The private network for Chief Experience and Customer Officers",
+  title: "CXO House — The Private Network for CXOs & CCOs",
+  description:
+    "CXO House is the private network for Chief Experience and Customer Officers—delivering insight, connection, and strategic clarity to lead through change.",
+  metadataBase: new URL("https://www.cxohouse.com"),
+  openGraph: {
+    title: "CXO House — The Private Network for CXOs & CCOs",
+    description:
+      "The private network for Chief Experience and Customer Officers run by Blake Morgan.",
+    type: "website",
+    locale: "en_US",
+    siteName: "CXO House",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "CXO House — The Private Network for CXOs & CCOs",
+    description:
+      "The private network for Chief Experience and Customer Officers run by Blake Morgan.",
+  },
 };
 
 export default function RootLayout({

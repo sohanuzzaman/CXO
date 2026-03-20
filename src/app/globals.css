@@ -357,6 +357,29 @@ html {
   scroll-snap-type: y mandatory;
 } */
 
+/* Executive card text overflow handling */
+.exec-card-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.exec-card-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.exec-card-company {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
 /* Performance optimizations */
 .gpu-accelerate {
   transform: translateZ(0);

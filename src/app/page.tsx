@@ -2,13 +2,29 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, FormEvent } from "react";
 import Modal from "../components/Modal";
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
+    setIsSubmitting(true);
+    // Allow native form POST — re-enable after timeout in case of network error
+    setTimeout(() => setIsSubmitting(false), 10000);
+  };
+
   return (
     <main className="fade-in">
+      {/* Skip to main content */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-[#ffaf02] focus:text-black focus:px-4 focus:py-2 focus:rounded-full focus:font-bold focus:shadow-lg"
+      >
+        Skip to main content
+      </a>
+
       {/* Header */}
       <header
         className="px-4 py-6 bg-[#0db8ff] text-white"
@@ -45,6 +61,7 @@ export default function Home() {
 
       {/* Hero Section */}
       <section
+        id="main-content"
         className="hero-section relative bg-cover bg-left md:bg-center h-screen flex items-center overflow-hidden"
         style={{ backgroundImage: "url('/img/header3.webp')" }}
       >
@@ -355,7 +372,7 @@ export default function Home() {
             {/* Top Row - 4 items */}
             <div className="flex flex-wrap justify-center gap-8 sm:gap-10 lg:gap-12 xl:gap-16 w-full">
             {/* Card 1 */}
-            <div className="flex flex-col items-center text-center group transition-all duration-500 animate-in fade-in-50 slide-in-from-left delay-700 w-full sm:w-auto sm:max-w-[180px]">
+            <div className="flex flex-col items-center text-center group transition-all duration-500 animate-in fade-in-50 slide-in-from-left delay-700 w-full sm:w-auto sm:max-w-[200px]">
               <div className="relative overflow-hidden rounded-full mb-4 group-hover:shadow-2xl transition-shadow duration-500 border-2 border-yellow-400/30 group-hover:border-yellow-400 mx-auto w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36">
                 <Image
                   src="/img/suzie.png"
@@ -366,19 +383,19 @@ export default function Home() {
                 />
               </div>
               <div className="space-y-1">
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-yellow-400 leading-none group-hover:scale-105 transition-transform duration-300">
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-yellow-400 leading-none group-hover:scale-105 transition-transform duration-300 exec-card-company">
                   NRG
                 </h3>
-                <p className="text-xs sm:text-sm lg:text-base font-medium text-white/85 leading-tight px-1">
+                <p className="text-xs sm:text-sm lg:text-base font-medium text-white/85 leading-tight px-1 exec-card-title">
                   VP & Chief Experience Officer
                 </p>
-                <p className="text-xs sm:text-sm lg:text-base font-light text-white pt-0.5">
+                <p className="text-xs sm:text-sm lg:text-base font-light text-white pt-0.5 exec-card-name">
                   Suzie Dieth
                 </p>
               </div>
             </div>
             {/* Card 2 */}
-            <div className="flex flex-col items-center text-center group transition-all duration-500 animate-in fade-in-50 slide-in-from-bottom delay-900 w-full sm:w-auto sm:max-w-[180px]">
+            <div className="flex flex-col items-center text-center group transition-all duration-500 animate-in fade-in-50 slide-in-from-bottom delay-900 w-full sm:w-auto sm:max-w-[200px]">
               <div className="relative overflow-hidden rounded-full mb-4 group-hover:shadow-2xl transition-shadow duration-500 border-2 border-yellow-400/30 group-hover:border-yellow-400 mx-auto w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36">
                 <Image
                   src="/img/jeff.png"
@@ -389,19 +406,19 @@ export default function Home() {
                 />
               </div>
               <div className="space-y-1">
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-yellow-400 leading-none group-hover:scale-105 transition-transform duration-300">
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-yellow-400 leading-none group-hover:scale-105 transition-transform duration-300 exec-card-company">
                   Qualtrics
                 </h3>
-                <p className="text-xs sm:text-sm lg:text-base font-medium text-white/85 leading-tight px-1">
+                <p className="text-xs sm:text-sm lg:text-base font-medium text-white/85 leading-tight px-1 exec-card-title">
                   Chief Product, Experience, Design Officer
                 </p>
-                <p className="text-xs sm:text-sm lg:text-base font-light text-white pt-0.5">
+                <p className="text-xs sm:text-sm lg:text-base font-light text-white pt-0.5 exec-card-name">
                   Jeff Gelfuso
                 </p>
               </div>
             </div>
             {/* Card 3 */}
-            <div className="flex flex-col items-center text-center group transition-all duration-500 animate-in fade-in-50 slide-in-from-right delay-[1100ms] w-full sm:w-auto sm:max-w-[180px]">
+            <div className="flex flex-col items-center text-center group transition-all duration-500 animate-in fade-in-50 slide-in-from-right delay-[1100ms] w-full sm:w-auto sm:max-w-[200px]">
               <div className="relative overflow-hidden rounded-full mb-4 group-hover:shadow-2xl transition-shadow duration-500 border-2 border-yellow-400/30 group-hover:border-yellow-400 mx-auto w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36">
                 <Image
                   src="/img/valarie.png"
@@ -412,19 +429,19 @@ export default function Home() {
                 />
               </div>
               <div className="space-y-1">
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-yellow-400 leading-none group-hover:scale-105 transition-transform duration-300">
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-yellow-400 leading-none group-hover:scale-105 transition-transform duration-300 exec-card-company">
                   Cambridge
                 </h3>
-                <p className="text-xs sm:text-sm lg:text-base font-medium text-white/85 leading-tight px-1">
+                <p className="text-xs sm:text-sm lg:text-base font-medium text-white/85 leading-tight px-1 exec-card-title">
                   Chief Experience Officer
                 </p>
-                <p className="text-xs sm:text-sm lg:text-base font-light text-white pt-0.5">
+                <p className="text-xs sm:text-sm lg:text-base font-light text-white pt-0.5 exec-card-name">
                   Valarie Vest
                 </p>
               </div>
             </div>
             {/* Card 4 */}
-            <div className="flex flex-col items-center text-center group transition-all duration-500 animate-in fade-in-50 slide-in-from-right delay-[1300ms] w-full sm:w-auto sm:max-w-[180px]">
+            <div className="flex flex-col items-center text-center group transition-all duration-500 animate-in fade-in-50 slide-in-from-right delay-[1300ms] w-full sm:w-auto sm:max-w-[200px]">
               <div className="relative overflow-hidden rounded-full mb-4 group-hover:shadow-2xl transition-shadow duration-500 border-2 border-yellow-400/30 group-hover:border-yellow-400 mx-auto w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36">
                 <Image
                   src="/img/Chief Customer Officer at M&T Bank.jpg"
@@ -435,13 +452,13 @@ export default function Home() {
                 />
               </div>
               <div className="space-y-1">
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-yellow-400 leading-none group-hover:scale-105 transition-transform duration-300">
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-yellow-400 leading-none group-hover:scale-105 transition-transform duration-300 exec-card-company">
                   M&T Bank
                 </h3>
-                <p className="text-xs sm:text-sm lg:text-base font-medium text-white/85 leading-tight px-1">
+                <p className="text-xs sm:text-sm lg:text-base font-medium text-white/85 leading-tight px-1 exec-card-title">
                   Chief Customer Officer
                 </p>
-                <p className="text-xs sm:text-sm lg:text-base font-light text-white pt-0.5">
+                <p className="text-xs sm:text-sm lg:text-base font-light text-white pt-0.5 exec-card-name">
                   Krista Phillips
                 </p>
               </div>
@@ -450,7 +467,7 @@ export default function Home() {
             {/* Bottom Row - 3 items */}
             <div className="flex flex-wrap justify-center gap-8 sm:gap-10 lg:gap-12 xl:gap-16 w-full">
             {/* Card 5 */}
-            <div className="flex flex-col items-center text-center group transition-all duration-500 animate-in fade-in-50 slide-in-from-right delay-[1500ms] w-full sm:w-auto sm:max-w-[180px]">
+            <div className="flex flex-col items-center text-center group transition-all duration-500 animate-in fade-in-50 slide-in-from-right delay-[1500ms] w-full sm:w-auto sm:max-w-[200px]">
               <div className="relative overflow-hidden rounded-full mb-4 group-hover:shadow-2xl transition-shadow duration-500 border-2 border-yellow-400/30 group-hover:border-yellow-400 mx-auto w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36">
                 <Image
                   src="/img/Chief Experience Officer at Lenovo.jpg"
@@ -461,19 +478,19 @@ export default function Home() {
                 />
               </div>
               <div className="space-y-1">
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-yellow-400 leading-none group-hover:scale-105 transition-transform duration-300">
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-yellow-400 leading-none group-hover:scale-105 transition-transform duration-300 exec-card-company">
                   Lenovo
                 </h3>
-                <p className="text-xs sm:text-sm lg:text-base font-medium text-white/85 leading-tight px-1">
+                <p className="text-xs sm:text-sm lg:text-base font-medium text-white/85 leading-tight px-1 exec-card-title">
                   Chief Experience Officer
                 </p>
-                <p className="text-xs sm:text-sm lg:text-base font-light text-white pt-0.5">
+                <p className="text-xs sm:text-sm lg:text-base font-light text-white pt-0.5 exec-card-name">
                   Dilip Bhatia
                 </p>
               </div>
             </div>
             {/* Card 6 */}
-            <div className="flex flex-col items-center text-center group transition-all duration-500 animate-in fade-in-50 slide-in-from-right delay-[1700ms] w-full sm:w-auto sm:max-w-[180px]">
+            <div className="flex flex-col items-center text-center group transition-all duration-500 animate-in fade-in-50 slide-in-from-right delay-[1700ms] w-full sm:w-auto sm:max-w-[200px]">
               <div className="relative overflow-hidden rounded-full mb-4 group-hover:shadow-2xl transition-shadow duration-500 border-2 border-yellow-400/30 group-hover:border-yellow-400 mx-auto w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36">
                 <Image
                   src="/img/Brian Higgins.jpeg"
@@ -484,19 +501,19 @@ export default function Home() {
                 />
               </div>
               <div className="space-y-1">
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-yellow-400 leading-none group-hover:scale-105 transition-transform duration-300">
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-yellow-400 leading-none group-hover:scale-105 transition-transform duration-300 exec-card-company">
                   Verizon
                 </h3>
-                <p className="text-xs sm:text-sm lg:text-base font-medium text-white/85 leading-tight px-1">
+                <p className="text-xs sm:text-sm lg:text-base font-medium text-white/85 leading-tight px-1 exec-card-title">
                   Chief Customer Experience Officer
                 </p>
-                <p className="text-xs sm:text-sm lg:text-base font-light text-white pt-0.5">
+                <p className="text-xs sm:text-sm lg:text-base font-light text-white pt-0.5 exec-card-name">
                   Brian Higgins
                 </p>
               </div>
             </div>
             {/* Card 7 */}
-            <div className="flex flex-col items-center text-center group transition-all duration-500 animate-in fade-in-50 slide-in-from-right delay-[1900ms] w-full sm:w-auto sm:max-w-[180px]">
+            <div className="flex flex-col items-center text-center group transition-all duration-500 animate-in fade-in-50 slide-in-from-right delay-[1900ms] w-full sm:w-auto sm:max-w-[200px]">
               <div className="relative overflow-hidden rounded-full mb-4 group-hover:shadow-2xl transition-shadow duration-500 border-2 border-yellow-400/30 group-hover:border-yellow-400 mx-auto w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36">
                 <Image
                   src="/img/Michael Watson.jpeg"
@@ -507,19 +524,19 @@ export default function Home() {
                 />
               </div>
               <div className="space-y-1">
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-yellow-400 leading-none group-hover:scale-105 transition-transform duration-300">
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-yellow-400 leading-none group-hover:scale-105 transition-transform duration-300 exec-card-company">
                   WM
                 </h3>
-                <p className="text-xs sm:text-sm lg:text-base font-medium text-white/85 leading-tight px-1">
+                <p className="text-xs sm:text-sm lg:text-base font-medium text-white/85 leading-tight px-1 exec-card-title">
                   Chief Customer Officer
                 </p>
-                <p className="text-xs sm:text-sm lg:text-base font-light text-white pt-0.5">
+                <p className="text-xs sm:text-sm lg:text-base font-light text-white pt-0.5 exec-card-name">
                   Michael Watson
                 </p>
               </div>
             </div>
             {/* Card 8 */}
-            <div className="flex flex-col items-center text-center group transition-all duration-500 animate-in fade-in-50 slide-in-from-right delay-[2100ms] w-full sm:w-auto sm:max-w-[180px]">
+            <div className="flex flex-col items-center text-center group transition-all duration-500 animate-in fade-in-50 slide-in-from-right delay-[2100ms] w-full sm:w-auto sm:max-w-[200px]">
               <div className="relative overflow-hidden rounded-full mb-4 group-hover:shadow-2xl transition-shadow duration-500 border-2 border-yellow-400/30 group-hover:border-yellow-400 mx-auto w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36">
                 <Image
                   src="/img/Tiffany Menyhart.jpg"
@@ -530,19 +547,19 @@ export default function Home() {
                 />
               </div>
               <div className="space-y-1">
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-yellow-400 leading-none group-hover:scale-105 transition-transform duration-300">
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-yellow-400 leading-none group-hover:scale-105 transition-transform duration-300 exec-card-company">
                   The Hershey Company
                 </h3>
-                <p className="text-xs sm:text-sm lg:text-base font-medium text-white/85 leading-tight px-1">
+                <p className="text-xs sm:text-sm lg:text-base font-medium text-white/85 leading-tight px-1 exec-card-title">
                   Chief Customer Officer
                 </p>
-                <p className="text-xs sm:text-sm lg:text-base font-light text-white pt-0.5">
+                <p className="text-xs sm:text-sm lg:text-base font-light text-white pt-0.5 exec-card-name">
                   Tiffany Menyhart
                 </p>
               </div>
             </div>
             {/* Card 9 */}
-            <div className="flex flex-col items-center text-center group transition-all duration-500 animate-in fade-in-50 slide-in-from-right delay-[2300ms] w-full sm:w-auto sm:max-w-[180px]">
+            <div className="flex flex-col items-center text-center group transition-all duration-500 animate-in fade-in-50 slide-in-from-right delay-[2300ms] w-full sm:w-auto sm:max-w-[200px]">
               <div className="relative overflow-hidden rounded-full mb-4 group-hover:shadow-2xl transition-shadow duration-500 border-2 border-yellow-400/30 group-hover:border-yellow-400 mx-auto w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36">
                 <Image
                   src="/img/Allison Landers.jpg"
@@ -553,19 +570,19 @@ export default function Home() {
                 />
               </div>
               <div className="space-y-1">
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-yellow-400 leading-none group-hover:scale-105 transition-transform duration-300">
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-yellow-400 leading-none group-hover:scale-105 transition-transform duration-300 exec-card-company">
                   UBS
                 </h3>
-                <p className="text-xs sm:text-sm lg:text-base font-medium text-white/85 leading-tight px-1">
+                <p className="text-xs sm:text-sm lg:text-base font-medium text-white/85 leading-tight px-1 exec-card-title">
                   Chief Experience Officer, Banking & Lending
                 </p>
-                <p className="text-xs sm:text-sm lg:text-base font-light text-white pt-0.5">
+                <p className="text-xs sm:text-sm lg:text-base font-light text-white pt-0.5 exec-card-name">
                   Allison Landers
                 </p>
               </div>
             </div>
             {/* Card 10 */}
-            <div className="flex flex-col items-center text-center group transition-all duration-500 animate-in fade-in-50 slide-in-from-right delay-[2500ms] w-full sm:w-auto sm:max-w-[180px]">
+            <div className="flex flex-col items-center text-center group transition-all duration-500 animate-in fade-in-50 slide-in-from-right delay-[2500ms] w-full sm:w-auto sm:max-w-[200px]">
               <div className="relative overflow-hidden rounded-full mb-4 group-hover:shadow-2xl transition-shadow duration-500 border-2 border-yellow-400/30 group-hover:border-yellow-400 mx-auto w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36">
                 <Image
                   src="/img/Memorial_Hermann.jpeg"
@@ -576,13 +593,13 @@ export default function Home() {
                 />
               </div>
               <div className="space-y-1">
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-yellow-400 leading-none group-hover:scale-105 transition-transform duration-300">
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-yellow-400 leading-none group-hover:scale-105 transition-transform duration-300 exec-card-company">
                   Memorial Hermann
                 </h3>
-                <p className="text-xs sm:text-sm lg:text-base font-medium text-white/85 leading-tight px-1">
+                <p className="text-xs sm:text-sm lg:text-base font-medium text-white/85 leading-tight px-1 exec-card-title">
                   Chief Consumer Experience Officer
                 </p>
-                <p className="text-xs sm:text-sm lg:text-base font-light text-white pt-0.5">
+                <p className="text-xs sm:text-sm lg:text-base font-light text-white pt-0.5 exec-card-name">
                   Alex Greengold
                 </p>
               </div>
@@ -666,7 +683,7 @@ export default function Home() {
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
         <div className="p-8 bg-gradient-to-br from-white to-gray-50">
           <div className="text-center mb-8">
-            <h2 className="text-3xl font-light italic text-[#0a4e65] mb-3">
+            <h2 id="modal-heading" className="text-3xl font-light italic text-[#0a4e65] mb-3">
               Join the CXO House Network
             </h2>
             <p className="text-gray-600 text-lg font-light leading-relaxed">
@@ -679,6 +696,7 @@ export default function Home() {
             method="post"
             className="space-y-6"
             acceptCharset="UTF-8"
+            onSubmit={handleFormSubmit}
           >
             <input name="utf8" type="hidden" value="✓" />
             <input
@@ -759,10 +777,11 @@ export default function Home() {
             <div className="pt-6 border-t border-gray-200">
               <button
                 type="submit"
-                className="w-full bg-[#ffaf02] hover:bg-[#e9a104] text-black font-bold px-8 py-4 rounded-full transition-all duration-300 text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-[1.02] active:scale-95 focus:outline-none focus:ring-4 focus:ring-[#ffaf02] focus:ring-opacity-50 group"
+                disabled={isSubmitting}
+                className="w-full bg-[#ffaf02] hover:bg-[#e9a104] text-black font-bold px-8 py-4 rounded-full transition-all duration-300 text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-[1.02] active:scale-95 focus:outline-none focus:ring-4 focus:ring-[#ffaf02] focus:ring-opacity-50 group disabled:opacity-60 disabled:cursor-not-allowed disabled:transform-none disabled:hover:bg-[#ffaf02] disabled:hover:shadow-lg"
               >
                 <span className="transition-transform duration-300 group-hover:tracking-wide">
-                  Request Invitation
+                  {isSubmitting ? "Submitting..." : "Request Invitation"}
                 </span>
               </button>
             </div>

@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useRef, useCallback } from 'react'
 
 interface ModalProps {
   isOpen: boolean
@@ -10,43 +10,82 @@ interface ModalProps {
 }
 
 export default function Modal({ isOpen, onClose, children, title }: ModalProps) {
-  // Close modal on Escape key
+  const modalRef = useRef<HTMLDivElement>(null)
+  const previousFocusRef = useRef<HTMLElement | null>(null)
+  const scrollYRef = useRef(0)
+
+  // Focus trap
+  const handleTab = useCallback((e: KeyboardEvent) => {
+    if (e.key !== 'Tab' || !modalRef.current) return
+
+    const focusable = modalRef.current.querySelectorAll<HTMLElement>(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    )
+    if (focusable.length === 0) return
+
+    const first = focusable[0]
+    const last = focusable[focusable.length - 1]
+
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault()
+      last.focus()
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault()
+      first.focus()
+    }
+  }, [])
+
   useEffect(() => {
-    const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        onClose()
-      }
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose()
+      handleTab(e)
     }
 
     if (isOpen) {
-      document.addEventListener('keydown', handleEscape)
-      // Prevent body scroll when modal is open
-      document.body.style.overflow = 'hidden'
+      previousFocusRef.current = document.activeElement as HTMLElement
+      scrollYRef.current = window.scrollY
+      document.addEventListener('keydown', handleKeyDown)
+      document.body.style.position = 'fixed'
+      document.body.style.top = `-${scrollYRef.current}px`
+      document.body.style.width = '100%'
+
+      // Focus the close button on open
+      requestAnimationFrame(() => {
+        const closeBtn = modalRef.current?.querySelector<HTMLElement>('[aria-label="Close modal"]')
+        closeBtn?.focus()
+      })
     }
 
     return () => {
-      document.removeEventListener('keydown', handleEscape)
-      document.body.style.overflow = 'unset'
+      document.removeEventListener('keydown', handleKeyDown)
+      if (isOpen) {
+        document.body.style.position = ''
+        document.body.style.top = ''
+        document.body.style.width = ''
+        window.scrollTo(0, scrollYRef.current)
+        previousFocusRef.current?.focus()
+      }
     }
-  }, [isOpen, onClose])
+  }, [isOpen, onClose, handleTab])
 
   if (!isOpen) return null
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center">
+    <div className="fixed inset-0 z-50 flex items-center justify-center" role="presentation">
       {/* Backdrop */}
-      <div 
+      <div
         className="absolute inset-0 bg-black bg-opacity-50 transition-opacity"
         onClick={onClose}
         aria-hidden="true"
       />
-      
+
       {/* Modal */}
-      <div 
+      <div
+        ref={modalRef}
         className="relative bg-white rounded-lg shadow-xl max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto transform transition-all"
         role="dialog"
         aria-modal="true"
-        aria-labelledby={title ? "modal-title" : undefined}
+        aria-labelledby={title ? "modal-title" : "modal-heading"}
       >
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b">
@@ -65,7 +104,7 @@ export default function Modal({ isOpen, onClose, children, title }: ModalProps) 
             </svg>
           </button>
         </div>
-        
+
         {/* Content */}
         <div className="p-6">
           {children}
