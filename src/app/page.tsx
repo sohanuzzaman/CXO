@@ -564,6 +564,29 @@ export default function Home() {
                 </p>
               </div>
             </div>
+            {/* Card 10 */}
+            <div className="flex flex-col items-center text-center group transition-all duration-500 animate-in fade-in-50 slide-in-from-right delay-[2500ms] w-full sm:w-auto sm:max-w-[180px]">
+              <div className="relative overflow-hidden rounded-full mb-4 group-hover:shadow-2xl transition-shadow duration-500 border-2 border-yellow-400/30 group-hover:border-yellow-400 mx-auto w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36">
+                <Image
+                  src="/img/Memorial_Hermann.jpeg"
+                  alt="Portrait of Alex Greengold, Chief Consumer Experience Officer at Memorial Hermann"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  width={144}
+                  height={144}
+                />
+              </div>
+              <div className="space-y-1">
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-yellow-400 leading-none group-hover:scale-105 transition-transform duration-300">
+                  Memorial Hermann
+                </h3>
+                <p className="text-xs sm:text-sm lg:text-base font-medium text-white/85 leading-tight px-1">
+                  Chief Consumer Experience Officer
+                </p>
+                <p className="text-xs sm:text-sm lg:text-base font-light text-white pt-0.5">
+                  Alex Greengold
+                </p>
+              </div>
+            </div>
             </div>
           </div>
         </div>
