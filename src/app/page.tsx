@@ -368,9 +368,7 @@ export default function Home() {
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light italic mb-8 sm:mb-12 lg:mb-16 animate-in fade-in-50 slide-in-from-bottom duration-1000 delay-500">
             See Some of the Attending Executives
           </h2>
-          <div className="flex flex-col items-center gap-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-            {/* Top Row - 5 items */}
-            <div className="flex flex-wrap justify-center gap-8 sm:gap-10 lg:gap-12 xl:gap-14 w-full">
+          <div className="flex flex-wrap justify-center gap-8 sm:gap-10 lg:gap-12 xl:gap-14 px-4 sm:px-6 lg:px-8 w-full max-w-7xl mx-auto">
             {/* Card 1 */}
             <div className="flex flex-col items-center text-center group transition-all duration-500 animate-in fade-in-50 slide-in-from-left delay-700 w-full sm:w-auto sm:max-w-[200px]">
               <div className="relative overflow-hidden rounded-full mb-4 group-hover:shadow-2xl transition-shadow duration-500 border-2 border-yellow-400/30 group-hover:border-yellow-400 mx-auto w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36">
@@ -486,9 +484,6 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            </div>
-            {/* Bottom Row - 5 items */}
-            <div className="flex flex-wrap justify-center gap-8 sm:gap-10 lg:gap-12 xl:gap-14 w-full">
             {/* Card 6 */}
             <div className="flex flex-col items-center text-center group transition-all duration-500 animate-in fade-in-50 slide-in-from-left delay-[1700ms] w-full sm:w-auto sm:max-w-[200px]">
               <div className="relative overflow-hidden rounded-full mb-4 group-hover:shadow-2xl transition-shadow duration-500 border-2 border-yellow-400/30 group-hover:border-yellow-400 mx-auto w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36">
@@ -604,6 +599,28 @@ export default function Home() {
                 </p>
               </div>
             </div>
+            {/* Card 11 */}
+            <div className="flex flex-col items-center text-center group transition-all duration-500 animate-in fade-in-50 slide-in-from-right delay-[2700ms] w-full sm:w-auto sm:max-w-[200px]">
+              <div className="relative overflow-hidden rounded-full mb-4 group-hover:shadow-2xl transition-shadow duration-500 border-2 border-yellow-400/30 group-hover:border-yellow-400 mx-auto w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36">
+                <Image
+                  src="/img/Matt_Brancato.jpeg"
+                  alt="Portrait of Matt Brancato, Head of Enterprise Client Relationships at Vanguard"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  width={144}
+                  height={144}
+                />
+              </div>
+              <div className="space-y-1">
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-yellow-400 leading-none group-hover:scale-105 transition-transform duration-300 exec-card-company">
+                  Vanguard
+                </h3>
+                <p className="text-xs sm:text-sm lg:text-base font-medium text-white/85 leading-tight px-1 exec-card-title">
+                  Head of Enterprise Client Relationships
+                </p>
+                <p className="text-xs sm:text-sm lg:text-base font-light text-white pt-0.5 exec-card-name">
+                  Matt Brancato
+                </p>
+              </div>
             </div>
           </div>
         </div>
