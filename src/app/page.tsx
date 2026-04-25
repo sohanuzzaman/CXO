@@ -2,12 +2,119 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState, FormEvent } from "react";
+import { useState, useEffect, useRef, FormEvent } from "react";
 import Modal from "../components/Modal";
+
+type Executive = {
+  company: string;
+  title: string;
+  name: string;
+  image: string;
+  alt: string;
+};
+
+const EXECUTIVES: Executive[] = [
+  {
+    company: "NRG",
+    title: "VP & Chief Experience Officer",
+    name: "Suzie Dieth",
+    image: "/img/suzie.png",
+    alt: "Portrait of Suzie Dieth, Vice President and Chief Experience Officer at NRG Consumer Energy",
+  },
+  {
+    company: "Qualtrics",
+    title: "Chief Product, Experience, Design Officer",
+    name: "Jeff Gelfuso",
+    image: "/img/jeff.png",
+    alt: "Portrait of Jeff Gelfuso, Chief Product, Experience, Design Officer at Qualtrics",
+  },
+  {
+    company: "Cambridge",
+    title: "Chief Experience Officer",
+    name: "Valarie Vest",
+    image: "/img/valarie.png",
+    alt: "Portrait of Valarie Vest, Chief Experience Officer at Cambridge Investment Research, Inc.",
+  },
+  {
+    company: "M&T Bank",
+    title: "Chief Customer Officer",
+    name: "Krista Phillips",
+    image: "/img/Chief Customer Officer at M&T Bank.jpg",
+    alt: "Portrait of Krista Phillips, Chief Customer Officer at M&T Bank",
+  },
+  {
+    company: "Lenovo",
+    title: "Chief Experience Officer",
+    name: "Dilip Bhatia",
+    image: "/img/Chief Experience Officer at Lenovo.jpg",
+    alt: "Portrait of Dilip Bhatia, Chief Experience Officer at Lenovo",
+  },
+  {
+    company: "Verizon",
+    title: "Chief Customer Experience Officer",
+    name: "Brian Higgins",
+    image: "/img/Brian Higgins.jpeg",
+    alt: "Portrait of Brian Higgins, Chief Customer Experience Officer at Verizon",
+  },
+  {
+    company: "WM",
+    title: "Chief Customer Officer",
+    name: "Michael Watson",
+    image: "/img/Michael Watson.jpeg",
+    alt: "Portrait of Michael Watson, Chief Customer Officer at WM",
+  },
+  {
+    company: "The Hershey Company",
+    title: "Chief Customer Officer",
+    name: "Tiffany Menyhart",
+    image: "/img/Tiffany Menyhart.jpg",
+    alt: "Portrait of Tiffany Menyhart, Chief Customer Officer at The Hershey Company",
+  },
+  {
+    company: "UBS",
+    title: "Chief Experience Officer, Banking & Lending",
+    name: "Allison Landers",
+    image: "/img/Allison Landers.jpg",
+    alt: "Portrait of Allison Landers, Chief Experience Officer, Banking & Lending at UBS",
+  },
+  {
+    company: "Memorial Hermann",
+    title: "Chief Consumer Experience Officer",
+    name: "Alex Greengold",
+    image: "/img/Memorial_Hermann.jpeg",
+    alt: "Portrait of Alex Greengold, Chief Consumer Experience Officer at Memorial Hermann",
+  },
+  {
+    company: "Vanguard",
+    title: "Head of Enterprise Client Relationships",
+    name: "Matt Brancato",
+    image: "/img/Matt_Brancato.jpg",
+    alt: "Portrait of Matt Brancato, Head of Enterprise Client Relationships at Vanguard",
+  },
+];
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const execGridRef = useRef<HTMLDivElement>(null);
+  const [execsVisible, setExecsVisible] = useState(false);
+
+  useEffect(() => {
+    const el = execGridRef.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setExecsVisible(true);
+          obs.disconnect();
+        }
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
 
   const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
     setIsSubmitting(true);
@@ -361,267 +468,42 @@ export default function Home() {
 
       {/* Executives Section */}
       <section
-        className="bg-black text-white py-16 sm:py-20 lg:py-24 px-4 bg-cover animate-in slide-in-from-bottom duration-1000 delay-300"
+        className="bg-black text-white py-16 sm:py-20 lg:py-24 px-4 bg-cover"
         style={{ backgroundImage: "url(/img/blackbg.webp)" }}
       >
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light italic mb-8 sm:mb-12 lg:mb-16 animate-in fade-in-50 slide-in-from-bottom duration-1000 delay-500">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light italic mb-8 sm:mb-12 lg:mb-16">
             See Some of the Attending Executives
           </h2>
-          <div className="flex flex-wrap justify-center gap-8 sm:gap-10 lg:gap-12 xl:gap-14 px-4 sm:px-6 lg:px-8 w-full max-w-7xl mx-auto">
-            {/* Card 1 */}
-            <div className="flex flex-col items-center text-center group transition-all duration-500 animate-in fade-in-50 slide-in-from-left delay-700 w-full sm:w-auto sm:max-w-[200px]">
-              <div className="relative overflow-hidden rounded-full mb-4 group-hover:shadow-2xl transition-shadow duration-500 border-2 border-yellow-400/30 group-hover:border-yellow-400 mx-auto w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36">
-                <Image
-                  src="/img/suzie.png"
-                  alt="Portrait of Suzie Dieth, Vice President and Chief Experience Officer at NRG Consumer Energy"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  width={144}
-                  height={144}
-                />
+          <div
+            ref={execGridRef}
+            className={`exec-grid px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto${execsVisible ? " in-view" : ""}`}
+          >
+            {EXECUTIVES.map((exec) => (
+              <div key={exec.name} className="exec-card">
+                <div className="relative overflow-hidden rounded-full mb-4 border-2 border-yellow-400/30 hover:border-yellow-400/60 transition-colors duration-300 mx-auto w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36">
+                  <Image
+                    src={exec.image}
+                    alt={exec.alt}
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                    width={144}
+                    height={144}
+                    sizes="(max-width: 640px) 112px, (max-width: 1024px) 128px, 144px"
+                  />
+                </div>
+                <div className="space-y-1">
+                  <p className="text-lg sm:text-xl font-bold text-yellow-400 leading-snug exec-card-company">
+                    {exec.company}
+                  </p>
+                  <p className="text-xs sm:text-sm font-medium text-white/85 leading-tight px-1 exec-card-title">
+                    {exec.title}
+                  </p>
+                  <p className="text-xs sm:text-sm font-light text-white pt-0.5 exec-card-name">
+                    {exec.name}
+                  </p>
+                </div>
               </div>
-              <div className="space-y-1">
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-yellow-400 leading-none group-hover:scale-105 transition-transform duration-300 exec-card-company">
-                  NRG
-                </h3>
-                <p className="text-xs sm:text-sm lg:text-base font-medium text-white/85 leading-tight px-1 exec-card-title">
-                  VP & Chief Experience Officer
-                </p>
-                <p className="text-xs sm:text-sm lg:text-base font-light text-white pt-0.5 exec-card-name">
-                  Suzie Dieth
-                </p>
-              </div>
-            </div>
-            {/* Card 2 */}
-            <div className="flex flex-col items-center text-center group transition-all duration-500 animate-in fade-in-50 slide-in-from-bottom delay-900 w-full sm:w-auto sm:max-w-[200px]">
-              <div className="relative overflow-hidden rounded-full mb-4 group-hover:shadow-2xl transition-shadow duration-500 border-2 border-yellow-400/30 group-hover:border-yellow-400 mx-auto w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36">
-                <Image
-                  src="/img/jeff.png"
-                  alt="Portrait of Jeff Gelfuso, Chief Product, Experience, Design Officer at Qualtrics"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  width={144}
-                  height={144}
-                />
-              </div>
-              <div className="space-y-1">
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-yellow-400 leading-none group-hover:scale-105 transition-transform duration-300 exec-card-company">
-                  Qualtrics
-                </h3>
-                <p className="text-xs sm:text-sm lg:text-base font-medium text-white/85 leading-tight px-1 exec-card-title">
-                  Chief Product, Experience, Design Officer
-                </p>
-                <p className="text-xs sm:text-sm lg:text-base font-light text-white pt-0.5 exec-card-name">
-                  Jeff Gelfuso
-                </p>
-              </div>
-            </div>
-            {/* Card 3 */}
-            <div className="flex flex-col items-center text-center group transition-all duration-500 animate-in fade-in-50 slide-in-from-right delay-[1100ms] w-full sm:w-auto sm:max-w-[200px]">
-              <div className="relative overflow-hidden rounded-full mb-4 group-hover:shadow-2xl transition-shadow duration-500 border-2 border-yellow-400/30 group-hover:border-yellow-400 mx-auto w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36">
-                <Image
-                  src="/img/valarie.png"
-                  alt="Portrait of Valarie Vest, Chief Experience Officer at Cambridge Investment Research, Inc."
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  width={144}
-                  height={144}
-                />
-              </div>
-              <div className="space-y-1">
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-yellow-400 leading-none group-hover:scale-105 transition-transform duration-300 exec-card-company">
-                  Cambridge
-                </h3>
-                <p className="text-xs sm:text-sm lg:text-base font-medium text-white/85 leading-tight px-1 exec-card-title">
-                  Chief Experience Officer
-                </p>
-                <p className="text-xs sm:text-sm lg:text-base font-light text-white pt-0.5 exec-card-name">
-                  Valarie Vest
-                </p>
-              </div>
-            </div>
-            {/* Card 4 */}
-            <div className="flex flex-col items-center text-center group transition-all duration-500 animate-in fade-in-50 slide-in-from-right delay-[1300ms] w-full sm:w-auto sm:max-w-[200px]">
-              <div className="relative overflow-hidden rounded-full mb-4 group-hover:shadow-2xl transition-shadow duration-500 border-2 border-yellow-400/30 group-hover:border-yellow-400 mx-auto w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36">
-                <Image
-                  src="/img/Chief Customer Officer at M&T Bank.jpg"
-                  alt="Portrait of Krista Phillips, Chief Customer Officer at M&T Bank"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  width={144}
-                  height={144}
-                />
-              </div>
-              <div className="space-y-1">
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-yellow-400 leading-none group-hover:scale-105 transition-transform duration-300 exec-card-company">
-                  M&T Bank
-                </h3>
-                <p className="text-xs sm:text-sm lg:text-base font-medium text-white/85 leading-tight px-1 exec-card-title">
-                  Chief Customer Officer
-                </p>
-                <p className="text-xs sm:text-sm lg:text-base font-light text-white pt-0.5 exec-card-name">
-                  Krista Phillips
-                </p>
-              </div>
-            </div>
-            {/* Card 5 */}
-            <div className="flex flex-col items-center text-center group transition-all duration-500 animate-in fade-in-50 slide-in-from-right delay-[1500ms] w-full sm:w-auto sm:max-w-[200px]">
-              <div className="relative overflow-hidden rounded-full mb-4 group-hover:shadow-2xl transition-shadow duration-500 border-2 border-yellow-400/30 group-hover:border-yellow-400 mx-auto w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36">
-                <Image
-                  src="/img/Chief Experience Officer at Lenovo.jpg"
-                  alt="Portrait of Dilip Bhatia, Chief Experience Officer at Lenovo"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  width={144}
-                  height={144}
-                />
-              </div>
-              <div className="space-y-1">
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-yellow-400 leading-none group-hover:scale-105 transition-transform duration-300 exec-card-company">
-                  Lenovo
-                </h3>
-                <p className="text-xs sm:text-sm lg:text-base font-medium text-white/85 leading-tight px-1 exec-card-title">
-                  Chief Experience Officer
-                </p>
-                <p className="text-xs sm:text-sm lg:text-base font-light text-white pt-0.5 exec-card-name">
-                  Dilip Bhatia
-                </p>
-              </div>
-            </div>
-            {/* Card 6 */}
-            <div className="flex flex-col items-center text-center group transition-all duration-500 animate-in fade-in-50 slide-in-from-left delay-[1700ms] w-full sm:w-auto sm:max-w-[200px]">
-              <div className="relative overflow-hidden rounded-full mb-4 group-hover:shadow-2xl transition-shadow duration-500 border-2 border-yellow-400/30 group-hover:border-yellow-400 mx-auto w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36">
-                <Image
-                  src="/img/Brian Higgins.jpeg"
-                  alt="Portrait of Brian Higgins, Chief Customer Experience Officer at Verizon"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  width={144}
-                  height={144}
-                />
-              </div>
-              <div className="space-y-1">
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-yellow-400 leading-none group-hover:scale-105 transition-transform duration-300 exec-card-company">
-                  Verizon
-                </h3>
-                <p className="text-xs sm:text-sm lg:text-base font-medium text-white/85 leading-tight px-1 exec-card-title">
-                  Chief Customer Experience Officer
-                </p>
-                <p className="text-xs sm:text-sm lg:text-base font-light text-white pt-0.5 exec-card-name">
-                  Brian Higgins
-                </p>
-              </div>
-            </div>
-            {/* Card 7 */}
-            <div className="flex flex-col items-center text-center group transition-all duration-500 animate-in fade-in-50 slide-in-from-bottom delay-[1900ms] w-full sm:w-auto sm:max-w-[200px]">
-              <div className="relative overflow-hidden rounded-full mb-4 group-hover:shadow-2xl transition-shadow duration-500 border-2 border-yellow-400/30 group-hover:border-yellow-400 mx-auto w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36">
-                <Image
-                  src="/img/Michael Watson.jpeg"
-                  alt="Portrait of Michael Watson, Chief Customer Officer at WM"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  width={144}
-                  height={144}
-                />
-              </div>
-              <div className="space-y-1">
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-yellow-400 leading-none group-hover:scale-105 transition-transform duration-300 exec-card-company">
-                  WM
-                </h3>
-                <p className="text-xs sm:text-sm lg:text-base font-medium text-white/85 leading-tight px-1 exec-card-title">
-                  Chief Customer Officer
-                </p>
-                <p className="text-xs sm:text-sm lg:text-base font-light text-white pt-0.5 exec-card-name">
-                  Michael Watson
-                </p>
-              </div>
-            </div>
-            {/* Card 8 */}
-            <div className="flex flex-col items-center text-center group transition-all duration-500 animate-in fade-in-50 slide-in-from-right delay-[2100ms] w-full sm:w-auto sm:max-w-[200px]">
-              <div className="relative overflow-hidden rounded-full mb-4 group-hover:shadow-2xl transition-shadow duration-500 border-2 border-yellow-400/30 group-hover:border-yellow-400 mx-auto w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36">
-                <Image
-                  src="/img/Tiffany Menyhart.jpg"
-                  alt="Portrait of Tiffany Menyhart, Chief Customer Officer at The Hershey Company"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  width={144}
-                  height={144}
-                />
-              </div>
-              <div className="space-y-1">
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-yellow-400 leading-none group-hover:scale-105 transition-transform duration-300 exec-card-company">
-                  The Hershey Company
-                </h3>
-                <p className="text-xs sm:text-sm lg:text-base font-medium text-white/85 leading-tight px-1 exec-card-title">
-                  Chief Customer Officer
-                </p>
-                <p className="text-xs sm:text-sm lg:text-base font-light text-white pt-0.5 exec-card-name">
-                  Tiffany Menyhart
-                </p>
-              </div>
-            </div>
-            {/* Card 9 */}
-            <div className="flex flex-col items-center text-center group transition-all duration-500 animate-in fade-in-50 slide-in-from-right delay-[2300ms] w-full sm:w-auto sm:max-w-[200px]">
-              <div className="relative overflow-hidden rounded-full mb-4 group-hover:shadow-2xl transition-shadow duration-500 border-2 border-yellow-400/30 group-hover:border-yellow-400 mx-auto w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36">
-                <Image
-                  src="/img/Allison Landers.jpg"
-                  alt="Portrait of Allison Landers, Chief Experience Officer, Banking & Lending at UBS"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  width={144}
-                  height={144}
-                />
-              </div>
-              <div className="space-y-1">
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-yellow-400 leading-none group-hover:scale-105 transition-transform duration-300 exec-card-company">
-                  UBS
-                </h3>
-                <p className="text-xs sm:text-sm lg:text-base font-medium text-white/85 leading-tight px-1 exec-card-title">
-                  Chief Experience Officer, Banking & Lending
-                </p>
-                <p className="text-xs sm:text-sm lg:text-base font-light text-white pt-0.5 exec-card-name">
-                  Allison Landers
-                </p>
-              </div>
-            </div>
-            {/* Card 10 */}
-            <div className="flex flex-col items-center text-center group transition-all duration-500 animate-in fade-in-50 slide-in-from-right delay-[2500ms] w-full sm:w-auto sm:max-w-[200px]">
-              <div className="relative overflow-hidden rounded-full mb-4 group-hover:shadow-2xl transition-shadow duration-500 border-2 border-yellow-400/30 group-hover:border-yellow-400 mx-auto w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36">
-                <Image
-                  src="/img/Memorial_Hermann.jpeg"
-                  alt="Portrait of Alex Greengold, Chief Consumer Experience Officer at Memorial Hermann"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  width={144}
-                  height={144}
-                />
-              </div>
-              <div className="space-y-1">
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-yellow-400 leading-none group-hover:scale-105 transition-transform duration-300 exec-card-company">
-                  Memorial Hermann
-                </h3>
-                <p className="text-xs sm:text-sm lg:text-base font-medium text-white/85 leading-tight px-1 exec-card-title">
-                  Chief Consumer Experience Officer
-                </p>
-                <p className="text-xs sm:text-sm lg:text-base font-light text-white pt-0.5 exec-card-name">
-                  Alex Greengold
-                </p>
-              </div>
-            </div>
-            {/* Card 11 */}
-            <div className="flex flex-col items-center text-center group transition-all duration-500 animate-in fade-in-50 slide-in-from-right delay-[2700ms] w-full sm:w-auto sm:max-w-[200px]">
-              <div className="relative overflow-hidden rounded-full mb-4 group-hover:shadow-2xl transition-shadow duration-500 border-2 border-yellow-400/30 group-hover:border-yellow-400 mx-auto w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36">
-                <Image
-                  src="/img/Matt_Brancato.jpeg"
-                  alt="Portrait of Matt Brancato, Head of Enterprise Client Relationships at Vanguard"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  width={144}
-                  height={144}
-                />
-              </div>
-              <div className="space-y-1">
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-yellow-400 leading-none group-hover:scale-105 transition-transform duration-300 exec-card-company">
-                  Vanguard
-                </h3>
-                <p className="text-xs sm:text-sm lg:text-base font-medium text-white/85 leading-tight px-1 exec-card-title">
-                  Head of Enterprise Client Relationships
-                </p>
-                <p className="text-xs sm:text-sm lg:text-base font-light text-white pt-0.5 exec-card-name">
-                  Matt Brancato
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
