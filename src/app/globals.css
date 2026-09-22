@@ -401,7 +401,6 @@ html {
 
 @media (min-width: 1024px) {
   .exec-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 3rem 2.5rem;
   }
 }

@@ -22,20 +22,6 @@ const EXECUTIVES: Executive[] = [
     alt: "Portrait of Suzie Dieth, Vice President and Chief Experience Officer at NRG Consumer Energy",
   },
   {
-    company: "Qualtrics",
-    title: "Chief Product, Experience, Design Officer",
-    name: "Jeff Gelfuso",
-    image: "/img/jeff.png",
-    alt: "Portrait of Jeff Gelfuso, Chief Product, Experience, Design Officer at Qualtrics",
-  },
-  {
-    company: "Cambridge",
-    title: "Chief Experience Officer",
-    name: "Valarie Vest",
-    image: "/img/valarie.png",
-    alt: "Portrait of Valarie Vest, Chief Experience Officer at Cambridge Investment Research, Inc.",
-  },
-  {
     company: "M&T Bank",
     title: "Chief Customer Officer",
     name: "Krista Phillips",
@@ -51,10 +37,10 @@ const EXECUTIVES: Executive[] = [
   },
   {
     company: "Verizon",
-    title: "Chief Customer Experience Officer",
+    title: "Former Chief Customer Officer",
     name: "Brian Higgins",
     image: "/img/Brian Higgins.jpeg",
-    alt: "Portrait of Brian Higgins, Chief Customer Experience Officer at Verizon",
+    alt: "Portrait of Brian Higgins, Former Chief Customer Officer at Verizon",
   },
   {
     company: "WM",
@@ -477,7 +463,7 @@ export default function Home() {
           </h2>
           <div
             ref={execGridRef}
-            className={`exec-grid px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto${execsVisible ? " in-view" : ""}`}
+            className={`exec-grid px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto${execsVisible ? " in-view" : ""}`}
           >
             {EXECUTIVES.map((exec) => (
               <div key={exec.name} className="exec-card">
